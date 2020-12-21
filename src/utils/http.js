@@ -1,5 +1,4 @@
 import axios from "axios";
-// const baseUrl = "http://www.pudge.wang:3180";
 
 // 引入轻提示
 import { Toast } from "vant";
