@@ -1,8 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from './router/Index';
 import { key, store } from './store';
-import { NavBar } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
 
 
 import 'amfe-flexible';
@@ -12,5 +12,6 @@ import 'vant/lib/index.css';
 const app=createApp(App);
 app.use(router);
 app.use(store, key);
-app.use(NavBar);
+app.use(Tabbar);
+app.use(TabbarItem);
 app.mount('#app');
