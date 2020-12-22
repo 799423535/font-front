@@ -1,3 +1,19 @@
+.exhibition .left {
+  float: left;
+}
+.exhibition .right {
+  float: right;
+}
 .exhibition .van-nav-bar__text {
   color: #777;
+}
+.exhibition .van-cell__value,
+.exhibition .van-icon {
+  color: #39a9ed;
+}
+.exhibition .van-cell {
+  border-left: #39a9ed 5px solid;
+}
+.exhibition .van-icon {
+  font-size: 18px;
 }
