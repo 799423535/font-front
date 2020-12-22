@@ -1,12 +1,16 @@
 <template>
-  <div class="home">home</div>
+  <div class="home">
+    <van-nav-bar
+      title="标题"
+      left-text="返回"
+      right-text="按钮"  
+    />
+  </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
-  },
+  setup() {},
 
   components: {},
 
@@ -17,4 +21,5 @@ export default {
   methods: {},
 };
 </script>
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+</style>
