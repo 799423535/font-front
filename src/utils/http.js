@@ -5,7 +5,7 @@ import { Toast } from "vant";
 
 // 创建实例
 const instance = axios.create({
-  baseURL: "http://www.pudge.wang:3180",
+  baseURL: "http://localhost:3000",
   timeout: 10000
 });
 
