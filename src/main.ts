@@ -4,12 +4,12 @@ import router from './router/Index';
 import { key, store } from './store';
 
 
-import {Tabbar, TabbarItem ,Icon, Col, Row , CellGroup, NavBar,Swipe,SwipeItem,Grid,GridItem,Cell} from 'vant';
 import 'amfe-flexible';
 import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
+import {Tabbar, TabbarItem ,Icon, Col, Row , CellGroup, NavBar,Swipe,SwipeItem,Grid,GridItem,Cell} from 'vant';
 
-import 'vant/lib/index.css'; 
+import 'vant/lib/index.css';
 
   
 const app=createApp(App);
@@ -28,7 +28,5 @@ app.use(GridItem);
 app.use(Cell);
 app.use(CellGroup);
 app.use(Icon);
-app.use(Swipe);
-app.use(SwipeItem);
 
 app.mount('#app');
