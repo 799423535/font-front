@@ -28,5 +28,7 @@ app.use(GridItem);
 app.use(Cell);
 app.use(CellGroup);
 app.use(Icon);
+app.use(Swipe);
+app.use(SwipeItem);
 
 app.mount('#app');

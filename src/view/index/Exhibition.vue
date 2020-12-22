@@ -132,6 +132,7 @@
 </template>
 
 <script>
+import {} from "/@/utils/api"
 export default {
   data() {
     return {};
@@ -159,11 +160,6 @@ export default {
 
     //获取数据
      async getList(){
-      fetch("http://localhost:3000/tickets/getTickets")
-      .then(res=>res.json())
-      .then(res=>{
-        console.log(res)
-      })
 
     },
   }
