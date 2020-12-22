@@ -7,7 +7,7 @@ import { key, store } from './store';
 import 'amfe-flexible';
 import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
-import {Tabbar, TabbarItem ,Icon, Col, Row , CellGroup, NavBar,Swipe,SwipeItem,Grid,GridItem,Cell} from 'vant';
+import {Tabbar, TabbarItem, Tab, Tabs ,Icon, Col, Row , CellGroup, NavBar,Swipe,SwipeItem,Grid,GridItem,Cell} from 'vant';
 
 import 'vant/lib/index.css';
 
@@ -17,6 +17,9 @@ app.use(router);
 app.use(store, key);
 app.use(Tabbar);
 app.use(TabbarItem);
+//home
+app.use(Tab);
+app.use(Tabs);
 
 //我的
 app.use(NavBar);
