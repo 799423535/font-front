@@ -109,25 +109,21 @@
   
 
 <!-- 附近展览--主要内容模块 -->
-  <div class="nearby">
-    <van-cell title="附近展览" is-link value="查看更多" /> 
-    <!-- 遍历展览内容 -->
-    <div class="nearby-main">
-        <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539638062,3094889396&fm=26&gp=0.jpg" alt="图片">
+    <div class="nearby">
+      <van-cell title="附近展览" is-link value="查看更多" /> 
+      <!-- 遍历展览内容 -->
+      <div class="nearby-main">
+          <img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2539638062,3094889396&fm=26&gp=0.jpg" alt="图片">
 
-        <div class="nearby-right">
-          <h3>标题</h3>
-          <p>展览地方</p>
-          <p>正在进行</p>
-        </div>
+          <div class="nearby-right">
+            <h3>标题</h3>
+            <p>展览地方</p>
+            <p>正在进行</p>
+          </div>
+      </div>
+
+
     </div>
-
-
-  </div>
-
-
-
-
   </div>
 </template>
 
@@ -160,7 +156,7 @@ export default {
 
     //获取数据
      async getList(){
-
+       
     },
   }
 };
