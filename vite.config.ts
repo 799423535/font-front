@@ -1,5 +1,14 @@
-const {resolve} = require('path')
+const { resolve } = require('path')
 export default {
+    devServer: {
+        proxy: {
+            "/ajax": {
+                target: "http://localhost:9999",
+                ws: true,
+                changeOrigin: true
+            }
+        }
+    },
     alias: {
         '/@/': resolve(__dirname, 'src'),
         '/com/': resolve(__dirname, 'src/components'),
