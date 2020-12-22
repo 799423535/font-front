@@ -13,7 +13,7 @@ export const store = createStore({
   }
 })
 
-// define your own `useStore` composition function
+
 export function useStore () {
   return baseUseStore(key);
 }

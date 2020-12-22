@@ -27,6 +27,14 @@ const routes = [
                         component: () => import('./../view/index/Mine.vue')
                     }
                 ]
+            },
+            { //搜索页
+                path:"/search",
+                component:() =>import('../view/exhibition/Search.vue')
+            },
+            { //城市页面
+                path:"/city",
+                component:() =>import('../view/exhibition/City.vue')
             }
         ],
     },

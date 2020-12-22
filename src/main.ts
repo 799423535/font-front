@@ -10,7 +10,7 @@ import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
 
 import 'vant/lib/index.css';
-import { NavBar,Swipe,SwipeItem,Grid,GridItem } from 'vant';
+import { NavBar,Swipe,SwipeItem,Grid,GridItem,Cell,CellGroup,Icon} from 'vant';
 
   
 const app=createApp(App);
@@ -23,4 +23,8 @@ app.use(SwipeItem);
 app.use(NavBar);
 app.use(Grid);
 app.use(GridItem);
+app.use(Cell);
+app.use(CellGroup);
+app.use(Icon);
+
 app.mount('#app');
