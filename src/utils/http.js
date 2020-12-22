@@ -14,14 +14,14 @@ instance.interceptors.request.use(
   config => {
     if (localStorage.getItem("token")) {
       // 请求数据里面携带token
-      // if (config.method === "get") {
-      //   config.params.token = localStorage.getItem("token");
-      // } else if (config.method === "post") {
-      //   config.data.token = localStorage.getItem("token");
-      // }
+      if (config.method === "get") {
+        config.params.token = localStorage.getItem("token");
+      } else if (config.method === "post") {
+        config.data.token = localStorage.getItem("token");
+      }
 
       // 在请求头里面携带token
-      config.headers.token = localStorage.getItem("token");
+      // config.headers.token = localStorage.getItem("token");
     }
     // 在发送请求之前做些什么
     return config;
@@ -39,7 +39,7 @@ instance.interceptors.response.use(
     // 对响应数据做点什么
     return response.data;
   },
-  function(error) {
+  function (error) {
     // 对响应错误做点什么
     return Promise.reject(error);
   }
