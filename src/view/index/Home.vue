@@ -1,11 +1,11 @@
 <template>
-  <div>home</div>
+  <div class="home">home</div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {};
+  setup(){
+    
   },
 
   components: {},
@@ -14,7 +14,7 @@ export default {
 
   mounted() {},
 
-  methods: {}
+  methods: {},
 };
 </script>
 <style lang='less' scoped></style>

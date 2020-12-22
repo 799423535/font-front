@@ -9,7 +9,7 @@ import 'amfe-flexible';
 import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
 
-import 'vant/lib/index.css';
+import 'vant/lib/index.css'; 
 
   
 const app=createApp(App);
