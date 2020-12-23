@@ -4,7 +4,7 @@ import router from './router/Index';
 import { key, store } from './store';
 
 
-import {Tabbar, TabbarItem ,Icon, Col, Row , CellGroup, NavBar,Swipe,SwipeItem,Grid,GridItem,Cell} from 'vant';
+import {Tabbar, TabbarItem ,Icon, Col, Row ,Search, CellGroup, NavBar,Swipe,SwipeItem,Grid,GridItem,Cell,Image as VanImage} from 'vant';
 import 'amfe-flexible';
 import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
@@ -17,6 +17,8 @@ app.use(router);
 app.use(store, key);
 app.use(Tabbar);
 app.use(TabbarItem);
+app.use(VanImage);
+
 
 //我的
 app.use(NavBar);
@@ -30,5 +32,6 @@ app.use(CellGroup);
 app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
+app.use(Search);
 
 app.mount('#app');
