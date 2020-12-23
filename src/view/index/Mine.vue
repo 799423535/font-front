@@ -4,47 +4,49 @@
     <div id="mine-title">
       <van-nav-bar :class="mine-title"   title="我"
       right-text="设置"
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
+      @click-right="gotoSet"
      >
      <template #left>
-      <van-icon name=comment-o />
+      <van-image :src="icon" />
      </template>
      </van-nav-bar>
     </div>
     
     <!-- 表头 -->
-    <div class="mine-head gap">
+    <div class="mine-head gap" style="margin-bottom:12px">
         <div class="portraits">
           <div class="portraits-top">
-            <div class="portraits-ico"></div>
-            <div class="portraits-name">
-             <span >七月上</span>
-             <br>
-             <span>在艺号 <span class="arro">></span> </span>
+            <div class="portraits-ico" @click="gotoNote">
+              <img  src="./../../assets/slices/mineslices/touxian.png" alt="">
+            </div>
+             <div class="portraits-name">
+              <span >七月上</span>
+               <br>
+              <span style="color:#909090 ;font-size:12px">在艺号 <span class="arro"> 28796505 ></span> </span>
             </div>
              
-             <div class="mine-headercenter">
-               会员中心
+             <div class="mine-headercenter member">
+               <img class="" src="./../../assets/slices/mineslices/icon2.png" alt="">
+               <span class="member-center">会员中心</span>
              </div>
           </div>
           <div class="portraits-bottom">
             <ul class="portraits-list">
               <li>
               <div>
-                <span style="margin:auto">0</span>
+                <span class="ptop"> 0 </span>
                   <br>
                 <span>关注</span>
               </div>
                   
               </li>
                <li>
-                   <span>0</span>
+                   <span class="ptop">0</span>
                    <br>
                   <span>粉丝</span>
               </li>
               <li>
-                  <span>0</span>
+                  <span class="ptop">0</span>
                   <br>
                   <span>积分</span>
               </li>
@@ -56,48 +58,100 @@
         
     </div>
    <!-- 订单 -->
-   <div class="money gap">
+   <div class="money gap" style="margin-top:11px">
     <div class="order">
-      <p>我的订单</p>
-        <span>验票/付款/查物流</span>
-        <div></div>
+      <div class="order-left">
+         <p>我的订单</p>
+         <p style="color:#777">验票/付款/查物流</p>
+      </div>
+        <div class="order-right">
+          <img src="./../../assets/slices/mineslices/icon3.png" alt="">
+        </div>
     </div>
-  
+     <div class="money-line"></div>
       <div class="purse">
-        <p>我的钱包</p>
-        <span>订单/报名商家券</span>
-        <div></div>
+         <div class="purse-left">
+          <p>我的钱包</p>
+          <p style="color:#777">订单/报名商家券</p>
+         </div>
+        <div class="purse-right">
+          <img src="./../../assets/slices/mineslices/icon4.png" alt="">
+        </div>
      </div>
 
    </div>
 
-   <div class="share gap">
+   <div class="share gap" style="background:#fff" >
    <div class="minetitle">分享与发现</div>
    <hr>
-    <van-grid  :column-num="4">
-  <van-grid-item icon="photo-o" text="笔记" />
-  <van-grid-item icon="photo-o" text="提问" />
-  <van-grid-item icon="photo-o" text="作品" />
-  <van-grid-item icon="photo-o" text="直播" />
-  <van-grid-item icon="photo-o" text="话题" />
-  <van-grid-item icon="photo-o" text="订阅" />
-  <van-grid-item icon="photo-o" text="草稿箱" />
-  <van-grid-item  />
+    <van-grid  :column-num="4"  :border="false" >
+   <van-grid-item text="笔记">
+   <van-image :src="img1" />
+   <span class="spansize">笔记</span>
+   </van-grid-item>
+  <van-grid-item text="提问">
+   <van-image :src="img2"  />
+   <span class="spansize">提问</span>
+  </van-grid-item>
+    <van-grid-item text="作品">
+   <van-image :src="img3"  />
+   <span class="spansize">作品</span>
+  </van-grid-item>
+    <van-grid-item text="直播">
+   <van-image :src="img4"  />
+   <span class="spansize">直播</span>
+  </van-grid-item>
+   <van-grid-item text="话题">
+   <van-image :src="img5"  />
+   <span class="spansize">话题</span>
+  </van-grid-item> 
+   <van-grid-item text="订阅">
+   <van-image :src="img6"  />
+   <span class="spansize">订阅</span>
+   </van-grid-item>
+    <van-grid-item text="草稿箱">
+   <van-image :src="img7"  />
+   <span class="spansize">草稿箱</span>
+  </van-grid-item>
  </van-grid>
    </div>
    
    <div class="tools gap">
       <div class="minetitle">必备工具</div>
       <hr>
-    <van-grid  :column-num="4">
-  <van-grid-item icon="photo-o" text="收藏夹" />
-  <van-grid-item icon="photo-o" text="行程管理" />
-  <van-grid-item icon="photo-o" text="标准件" />
-  <van-grid-item icon="photo-o" text="印款查询" />
-  <van-grid-item icon="photo-o" text="展览记录" />
-  <van-grid-item icon="photo-o" text="成交记录" />
-  <van-grid-item icon="photo-o" text="申请上线展" />
-  <van-grid-item icon="photo-o" text="评选/赛事" />
+  <van-grid  :column-num="4">
+    <van-grid-item>
+   <van-image :src="a1" />
+   <span class="spansize">收藏夹</span>
+   </van-grid-item>
+   <van-grid-item>
+    <van-image :src="a2"  class="xcgl"/>
+   <span class="spansize xcgl2" >行程管理</span>
+    </van-grid-item>
+     <van-grid-item>
+    <van-image :src="a3" />
+   <span class="spansize">标准件</span>
+    </van-grid-item>
+  <van-grid-item>
+    <van-image :src="a4" />
+   <span class="spansize">印款查询</span>
+    </van-grid-item>
+    <van-grid-item>
+    <van-image :src="a5" />
+   <span class="spansize">展览记录</span>
+    </van-grid-item>
+     <van-grid-item>
+   <van-image :src="a6" />
+   <span class="spansize">成交记录</span>
+    </van-grid-item>
+   <van-grid-item>
+   <van-image :src="a7" />
+   <span class="spansize">申请上线展</span>
+    </van-grid-item>
+   <van-grid-item>
+   <van-image :src="a8" />
+   <span class="spansize">评选/赛事</span>
+    </van-grid-item>
  </van-grid>
    </div>
 
@@ -108,7 +162,7 @@
     <van-cell title="意见反馈" is-link />
     <van-cell title="分享在艺" is-link />
     <van-cell title="申请认证" is-link />
-    <van-cell title="申请认证" is-link />
+    <!-- <van-cell title="申请认证" is-link /> -->
    </van-cell-group>
    </div>
 
@@ -119,16 +173,60 @@
 
 
 <script>
+import icon from "../../assets/slices/mineslices/icon.png"
+import img1 from "../../assets/slices/mineslices/biji.png"
+import img2 from "../../assets/slices/mineslices/tiwen.png"
+import img3 from "../../assets/slices/mineslices/zuopin.png"
+import img4 from "../../assets/slices/mineslices/zhibo.png"
+import img5 from "../../assets/slices/mineslices/huati.png"
+import img6 from "../../assets/slices/mineslices/dingyue.png"
+import img7 from "../../assets/slices/mineslices/caogaoxiang.png"
+import a1 from "../../assets/slices/mineslices/scjia.png"
+import a2 from "../../assets/slices/mineslices/xcgl2.png"
+import a3 from "../../assets/slices/mineslices/biaozj.png"
+import a4 from "../../assets/slices/mineslices/chaxun.png"
+import a5 from "../../assets/slices/mineslices/zanlan.png"
+import a6 from "../../assets/slices/mineslices/chengjiao.png"
+import a7 from "../../assets/slices/mineslices/shenqing.png"
+import a8 from "../../assets/slices/mineslices/pingxuan.png"
 export default {
- 
+data(){
+  return {
+    icon:icon,
+    img1:img1,
+    img2:img2,
+    img3:img3,
+    img4:img4,
+    img5:img5,
+    img6:img6,
+    img7:img7,
+    a1:a1,
+    a2:a2,
+    a3:a3,
+    a4:a4,
+    a5:a5,
+    a6:a6,
+    a7:a7,
+    a8:a8
+  }
+},
+setup(){
 
+},
   components: {},
 
   computed: {},
 
   mounted() {},
 
-  methods: {}
+  methods: {
+    gotoNote(){
+      this.$router.push("/mine/note");
+    },
+    gotoSet(){
+      this.$router.push("/set/set");
+    }
+  }
 };
 </script>
 <style lang='less' scoped>
@@ -139,21 +237,23 @@ export default {
    height: 65px;
    display: flex;
    margin: auto;
+   padding-top: 10px;
    justify-content: space-between;
    
    .portraits-name{
      position: relative;
-     left: -80px;
+     left: -40px;
      vertical-align:baseline
-
    }
   
 
    .portraits-ico{
      width: 40px;
      height: 40px;
-     border:1px solid black;
      border-radius: 50%;
+     img{
+       transform: scale(1.3);
+     }
    }
    .portraits-name span:first-child{
      font-size: 16px;
@@ -165,6 +265,7 @@ export default {
        width: 13px;
        height: 13px;
        border: black 1px solid;
+       font-size: 12px;
      }
    }
  }
@@ -173,19 +274,24 @@ export default {
   //  background: blue;
    display: flex;
    justify-content: space-around;
- 
+     .ptop{
+       display: block;
+      margin-left: 10px;
+   }
  }
 
 
- .purse:after {
+ .order:after {
    height: 60px;
-   border: 2px 1px solid;
+   border: black 2px solid;
  }
 }
 .minetitle{
   padding: 10px 20px;
   background: #fff;
 }
+
+
 
 
 </style>

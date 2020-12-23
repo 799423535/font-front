@@ -137,8 +137,16 @@ export default defineComponent({
     height: 50px;
     background: #fff;
     height: 100%;
-    text-align: center;
-    line-height: 50px;
+    img{
+      top: 50%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
   }
 }
 </style>
