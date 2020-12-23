@@ -1,30 +1,59 @@
 <template>
    <div class="note">
-     <van-nav-bar
-      left-text=""
-      left-arrow
-      @click-left="gotoMine"
-/>  
-    <div>
-       <div>我的笔记</div>
-        <van-skeleton title avatar :row="3" />
-    </div>
+     <div style="background:#fff;height:210px;margin-bottom:20px">
+       <div class="note-bg">
+      <img src="../../assets/slices/noteslices/fanhui.png" alt="" class="note-back" @click="gotoMine">
+      <img src="../../assets/slices/noteslices/head_img.png" alt="" class="note-portrait"> 
+      <div class="fans">
+        <ul>
+          <li style="color:#000; font-weight:600">3.2k </li>
+          <li>获赞</li>
+          <li>|</li>
+          <li style="color:#52ABF0">69</li>
+          <li>关注</li>
+          <li style="color:#52ABF0">530</li>
+          <li>粉丝</li>
+        </ul>
+         
+      </div>
+   
+     </div>
+      <div class="mine-note">
+       <van-cell title="查看更多"  is-link />
+      </div>
+
+     </div>
+       
+       <!--  -->
+       <van-cell title="我的笔记" value="1条笔记" is-link   style="color:#52ABF0;font-weight:600 ;"/>
+       <div style="background:#fff" class="note-content">
+          <!-- <div >  -->
+            <img class="small-portail" src="../../assets/slices/noteslices/head_img.png" alt="">   
+          <!-- </div> -->
+          <div>
+            <p>昵称</p>
+            <p>data</p>
+            <p>text</p>
+            <div>
+             im
+            </div>
+            <div class="like">
+              <ul class="likelist">
+                <li><img src="../../assets/slices/noteslices/btn_forward.png" alt=""> <span>转发</span> </li>
+                <li><img src="../../assets/slices/noteslices/btn_flowers.png" alt=""> <span>喜欢</span></li>
+                 <li><img src="../../assets/slices/noteslices/btn_comment.png" alt=""> <span>分享</span></li>
+              </ul>
+            </div>
+          </div>
+       </div>
+      
+    
    </div>
 </template>
 
 <script>
-// import { ref, onMounted } from 'vue';
+
 export default {
-  //  setup() {
-  //   const loading = ref(true);
-
-  //   onMounted(() => {
-  //     loading.value = false;
-  //   });
-
-  //   return {
-  //     loading,
-  //   };
   methods:{
     gotoMine(){
       this.$router.push("/index/mine")

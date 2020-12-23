@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router/Index';
 import { key, store } from './store';
-import { Tabbar, TabbarItem ,NavBar,Icon, Col, Row , Grid, GridItem,Cell, CellGroup,Tab, Tabs,Field,Button,Skeleton,Image} from 'vant';
+import { Tabbar, TabbarItem ,NavBar,Icon, Col, Row , Grid, GridItem,Cell, CellGroup,Tab, Tabs,Field,Button,Skeleton,Image, Toast } from 'vant';
 
 
 import 'amfe-flexible';
@@ -12,6 +12,7 @@ import '/@/assets/styles/mine/mine.less';
 import '/@/assets/styles/login/login.less';
 import '/@/assets/styles/login/register.less';
 import '/@/assets/styles/note/note.less';
+import '/@/assets/styles/set/set.less';
 
 const app=createApp(App);
 app.use(router);
@@ -34,4 +35,5 @@ app.use(Field);
 app.use(Button);
 app.use(Skeleton);
 app.use(Image);
+app.use(Toast);
 app.mount('#app');
