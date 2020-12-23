@@ -125,7 +125,7 @@
       <van-cell title="附近展览" is-link value="查看更多" /> 
       <!-- 遍历展览内容 -->
       <div class="nearby-m">
-        <div class="nearby-main" v-for="item in list">
+        <div class="nearby-main" v-for="item in list" @click="todetail(item._id)">
             <img :src="item.img" alt="">
             <div class="nearby-right">
               <h5>{{item.title}}</h5>
@@ -185,6 +185,11 @@ export default {
         this.list = res.results;
         console.log(res.results);
     },
+
+    //点击展览，到详情页
+    todetail(id){
+      this.$router.push("/showdetail/"+id);
+    }
   }
 };
 </script>
