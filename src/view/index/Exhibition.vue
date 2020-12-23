@@ -16,10 +16,10 @@
     <!-- 轮播图 -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item>
-        <img src="../../assets/exhibitionimg/banner1.jpg" alt="">
+        <img src="../../assets/exhibitionimg/wonderful1.jpg" alt="">
       </van-swipe-item>
       <van-swipe-item>
-          <img src="../../assets/exhibitionimg/banner2.jpg" alt="">
+          <img src="../../assets/exhibitionimg/wonderful2.jpg" alt="">
       </van-swipe-item>
      
     </van-swipe>
@@ -301,7 +301,8 @@ export default {
 }
 
 .nearby{
-
+margin-top: 20px;
+background: #fff;
   .nearby-m{
     display: flex;
     flex-direction: column;
@@ -318,6 +319,7 @@ export default {
       float: left;
       width: 58px;
       height: 84px;
+      
     }
     .nearby-right{
       float: right;
@@ -326,6 +328,7 @@ export default {
       color: #909090;
       font-size: 12px;
       width: 240px;
+      padding-bottom: 30px;
       h5{
         padding: 10px 0;
         color: #222222;
@@ -334,6 +337,9 @@ export default {
         text-overflow: ellipsis; //文字过长，显示省略号
         overflow: hidden;
         white-space: nowrap;
+      }
+      p{
+        margin: 5px 0;
       }
     }
     }
