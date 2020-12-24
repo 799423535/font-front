@@ -20,7 +20,7 @@
               <img  src="./../../assets/slices/mineslices/head_img.png" alt="" class="headimg">
             </div>
              <div class="portraits-name">
-              <span >七月上</span>
+              <span >{{detailData.username}}</span>
                <br>
               <span style="color:#909090 ;font-size:12px">在艺号  28796505 <span class="arro"> ></span> </span>
             </div>
@@ -34,19 +34,19 @@
             <ul class="portraits-list">
               <li>
               <div>
-                <span class="ptop"> 0 </span>
+                <span class="ptop"> {{detailData.attention}} </span>
                   <br>
                 <span>关注</span>
               </div>
                   
               </li>
                <li>
-                   <span class="ptop">0</span>
+                   <span class="ptop">{{detailData.fans}}</span>
                    <br>
                   <span>粉丝</span>
               </li>
               <li>
-                  <span class="ptop">0</span>
+                  <span class="ptop">{{detailData.jifen}}</span>
                   <br>
                   <span>积分</span>
               </li>
@@ -177,26 +177,27 @@
 <script>
 import { ref } from 'vue';
 import { Toast } from 'vant';
-import icon from "../../assets/slices/mineslices/icon.png"
-import img1 from "../../assets/slices/mineslices/biji.png"
-import img2 from "../../assets/slices/mineslices/tiwen.png"
-import img3 from "../../assets/slices/mineslices/zuopin.png"
-import img4 from "../../assets/slices/mineslices/zhibo.png"
-import img5 from "../../assets/slices/mineslices/huati.png"
-import img6 from "../../assets/slices/mineslices/dingyue.png"
-import img7 from "../../assets/slices/mineslices/caogaoxiang.png"
-import a1 from "../../assets/slices/mineslices/scjia.png"
-import a2 from "../../assets/slices/mineslices/xcgl2.png"
-import a3 from "../../assets/slices/mineslices/biaozj.png"
-import a4 from "../../assets/slices/mineslices/chaxun.png"
-import a5 from "../../assets/slices/mineslices/zanlan.png"
-import a6 from "../../assets/slices/mineslices/chengjiao.png"
-import a7 from "../../assets/slices/mineslices/shenqing.png"
-import a8 from "../../assets/slices/mineslices/pingxuan.png"
+import icon from "../../assets/slices/mineslices/icon.png";
+import img1 from "../../assets/slices/mineslices/biji.png";
+import img2 from "../../assets/slices/mineslices/tiwen.png";
+import img3 from "../../assets/slices/mineslices/zuopin.png";
+import img4 from "../../assets/slices/mineslices/zhibo.png";
+import img5 from "../../assets/slices/mineslices/huati.png";
+import img6 from "../../assets/slices/mineslices/dingyue.png";
+import img7 from "../../assets/slices/mineslices/caogaoxiang.png";
+import a1 from "../../assets/slices/mineslices/scjia.png";
+import a2 from "../../assets/slices/mineslices/xcgl2.png";
+import a3 from "../../assets/slices/mineslices/biaozj.png";
+import a4 from "../../assets/slices/mineslices/chaxun.png";
+import a5 from "../../assets/slices/mineslices/zanlan.png";
+import a6 from "../../assets/slices/mineslices/chengjiao.png";
+import a7 from "../../assets/slices/mineslices/shenqing.png";
+import a8 from "../../assets/slices/mineslices/pingxuan.png";
 
 
 import { getdetailsApi } from "../../utils/api"
 export default {
+  
    setup() {
     const showShare = ref(false);
     const options = [
@@ -216,6 +217,7 @@ export default {
       showShare,
     };
   },
+  props:["id"],
 data(){
   return {
     icon:icon,
@@ -235,6 +237,7 @@ data(){
     a7:a7,
     a8:a8,
     detailData:{},
+    
   }
 },
 
@@ -243,24 +246,24 @@ data(){
   computed: {},
 
   mounted() {
-    this.getdetails()
+    this.getdetails();
   },
 
   methods: {
     async  getdetails(){
-  
-      const res = await getdetailsApi( {_id:localStorage.getItem('token')});
-        console.log(res);
+      const res = await getdetailsApi( {_id:this.id});
+        this.detailData = res.results;
+       
     },
      
     gotoNote(){
-      this.$router.push("/mine/note");
+      this.$router.push("/mine/note/"+this.id);
     },
     gotoSet(){
-      this.$router.push("/set/set");
+      this.$router.push("/set/set/"+this.id);
     },
     gotomynote(){
-      this.$router.push("/mine/mynote");
+      this.$router.push("/mine/mynote/"+this.id);
     }
   }
 };
@@ -277,8 +280,6 @@ data(){
    justify-content: space-between;
    
    .portraits-name{
-     position: relative;
-     left: -40px;
      vertical-align:baseline
    }
   
@@ -287,6 +288,8 @@ data(){
      width: 40px;
      height: 40px;
      border-radius: 50%;
+     position: relative;
+     left:10px;
      img{
        transform: scale(1.3);
      }
@@ -312,7 +315,7 @@ data(){
    justify-content: space-around;
      .ptop{
        display: block;
-      margin-left: 10px;
+       text-align: center;
    }
  }
 

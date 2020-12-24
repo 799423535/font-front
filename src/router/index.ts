@@ -24,8 +24,9 @@ const routes: any = [
             component: () => import('./../view/index/Course.vue')
           },
           {
-            path: '/index/mine',
-            component: () => import('./../view/index/Mine.vue')
+            path: '/index/mine/:id',
+            component: () => import('./../view/index/Mine.vue'),
+            props:true
 
           }
         ]
@@ -46,13 +47,15 @@ const routes: any = [
   },
   {
     //笔记
-    path: '/mine/note',
+    path: '/mine/note/:id',
     component: () => import('./../view/mine/note.vue'),
+    props:true
   },
   {
     //我的笔记
-    path: '/mine/mynote',
+    path: '/mine/mynote/:id',
     component: () => import('./../view/mine/mynote.vue'),
+    props:true
   },
   {
     //登录
@@ -66,8 +69,9 @@ const routes: any = [
   },
   { 
     //设置
-    path: '/set/set',
+    path: '/set/set/:id',
     component: () => import('./../view/set/set.vue'),
+    props:true
   },
   {
     path: "/tick",
