@@ -87,7 +87,7 @@
     <van-grid  :column-num="4"  :border="false" >
    <van-grid-item text="笔记">
    <van-image :src="img1" />
-   <span class="spansize">笔记</span>
+   <span class="spansize" @click="gotomynote">笔记</span>
    </van-grid-item>
   <van-grid-item text="提问">
    <van-image :src="img2"  />
@@ -242,19 +242,25 @@ data(){
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+    this.getdetails()
+  },
 
   methods: {
-    async  getdetailsApi(){
-      const res = await getdetailsApi( {username:this.form.username});
+    async  getdetails(){
+  
+      const res = await getdetailsApi( {_id:localStorage.getItem('token')});
         console.log(res);
     },
-
+     
     gotoNote(){
       this.$router.push("/mine/note");
     },
     gotoSet(){
       this.$router.push("/set/set");
+    },
+    gotomynote(){
+      this.$router.push("/mine/mynote");
     }
   }
 };

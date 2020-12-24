@@ -1,0 +1,14 @@
+.total {
+  width: 100%;
+  background-color: #fff;
+  height: 35px;
+}
+.total-tilte {
+  margin-left: 10px;
+  display: inline-block;
+  border-bottom: 4px solid skyblue ;
+  padding-bottom: 6px;
+  font-size: 16px;
+  color: skyblue;
+  font-weight: 600;
+}

@@ -84,9 +84,9 @@ export default {
     },
     async sendLogin(){
       const res = await  getUsersApi({username:this.form.username,password:this.form.password});
-      if(res.state==0){
+      if(res.status==0){
          localStorage.setItem('token',res.token);
-         this.$router.replace("/index/mine")
+         this.$router.replace("/index/mine");
       }else{
          Toast(res.msg);
       }

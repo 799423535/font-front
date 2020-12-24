@@ -50,6 +50,11 @@ const routes: any = [
     component: () => import('./../view/mine/note.vue'),
   },
   {
+    //我的笔记
+    path: '/mine/mynote',
+    component: () => import('./../view/mine/mynote.vue'),
+  },
+  {
     //登录
     path: '/login/login',
     component: () => import('./../view/login/login.vue'),
@@ -77,6 +82,7 @@ const routes: any = [
     path: '/:catchAll(.*)*',
     component: () => import('./../view/404.vue'),
   },
+
 
 ]
 
