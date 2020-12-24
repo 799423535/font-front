@@ -9,6 +9,10 @@ export const getIntroduceApi = (params: any): any => http.get("/introduce/getInt
 export const getUserApi = (params: any): any => http.get("/interests/getInterests", params);
 //查找某个票
 export const findTicketApi = (params: any): any => http.get("/tickets/findTicket", params);
+//note数据
+export const getdetailsApi = (datas: any) => http.post("/users/findUser", datas);
 
+// 登录
+export const getUsersApi = (datas: any) => http.post("/users/login", datas);
 
-
+export const getaddUserApi = (datas: any) => http.post("/users/addUser", datas);

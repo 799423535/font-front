@@ -20,7 +20,8 @@ import {
     Skeleton,
     Image,
     Swipe,
-    SwipeItem
+    SwipeItem,
+    Toast
 } from 'vant';
 
 
@@ -33,6 +34,7 @@ import '/@/assets/styles/mine/mine.less';
 import '/@/assets/styles/login/login.less';
 import '/@/assets/styles/login/register.less';
 import '/@/assets/styles/note/note.less';
+import '/@/assets/styles/set/set.less';
 
 
 const app = createApp(App);
@@ -61,4 +63,5 @@ app.use(Field);
 app.use(Button);
 app.use(Skeleton);
 app.use(Image);
+app.use(Toast);
 app.mount('#app');

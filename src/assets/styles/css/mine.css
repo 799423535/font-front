@@ -86,10 +86,6 @@ body {
   position: relative;
   top: -6px;
 }
-.member .spansize {
-  font-size: 8px;
-  color: #777;
-}
 .van-image {
   margin-bottom: 8px;
 }
@@ -99,4 +95,11 @@ body {
 .xcgl2 {
   position: relative;
   top: -20px;
+}
+.spansize {
+  font-size: 8px;
+  color: #777 !important;
+}
+.headimg {
+  width: 40px;
 }

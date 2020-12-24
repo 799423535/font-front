@@ -17,12 +17,12 @@
         <div class="portraits">
           <div class="portraits-top">
             <div class="portraits-ico" @click="gotoNote">
-              <img  src="./../../assets/slices/mineslices/touxian.png" alt="">
+              <img  src="./../../assets/slices/mineslices/head_img.png" alt="" class="headimg">
             </div>
              <div class="portraits-name">
               <span >七月上</span>
                <br>
-              <span style="color:#909090 ;font-size:12px">在艺号 <span class="arro"> 28796505 ></span> </span>
+              <span style="color:#909090 ;font-size:12px">在艺号  28796505 <span class="arro"> ></span> </span>
             </div>
              
              <div class="mine-headercenter member">
@@ -189,6 +189,9 @@ import a5 from "../../assets/slices/mineslices/zanlan.png"
 import a6 from "../../assets/slices/mineslices/chengjiao.png"
 import a7 from "../../assets/slices/mineslices/shenqing.png"
 import a8 from "../../assets/slices/mineslices/pingxuan.png"
+
+
+import { getdetailsApi } from "../../utils/api"
 export default {
 data(){
   return {
@@ -207,7 +210,8 @@ data(){
     a5:a5,
     a6:a6,
     a7:a7,
-    a8:a8
+    a8:a8,
+    detailData:{},
   }
 },
 setup(){
@@ -220,6 +224,11 @@ setup(){
   mounted() {},
 
   methods: {
+    async  getdetailsApi(){
+      const res = await getdetailsApi( {username:this.form.username});
+        console.log(res);
+    },
+
     gotoNote(){
       this.$router.push("/mine/note");
     },

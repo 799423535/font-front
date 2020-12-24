@@ -91,10 +91,12 @@ export default defineComponent({
     };
     const promptly = () => {
       const token = localStorage.getItem("token");
-      if (token) {
-      } else {
-        router.push("/login/login");
-      }
+      
+      // if (token) {
+
+      // } else {
+      //   router.push("/login/login");
+      // }
     };
     store.dispatch("details/findTicket", id);
     return { goback, isActive, handClick, promptly };

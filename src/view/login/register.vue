@@ -6,15 +6,15 @@
     @click-left="gotologin"
    />
   <div class="register">
-     <van-field v-model="value" placeholder="手机/电子邮箱" class="login-btn frame" />
+     <van-field v-model="form.username" placeholder="手机/电子邮箱" class="login-btn frame" />
      <div style="display:flex">
        <van-field
-    v-model="sms"
+    v-model="form.password"
     placeholder="验证码"
     class="frame cor"
  />
-     <van-button  type="primary" style="margin-top:6px">发送验证码</van-button>
-
+     <van-button  type="primary" style="margin-top:27px" @click="btnlogin">发送验证码</van-button>
+     
      </div>
     
 
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import axios from "axios"
+import  { getaddUserApi } from "../../utils/api.ts"
 import { reactive } from 'vue';
 export default {
   setup() {
@@ -42,7 +44,14 @@ export default {
 
     return { state };
   },
-  
+  data(){
+    return{
+      form:{
+        username:"",
+        password:"",
+      }
+    }
+  },
 
   components: {},
 
@@ -51,8 +60,15 @@ export default {
   mounted() {},
 
   methods: {
+    //后退
     gotologin(){
       this.$router.push("/login/login")
+    },
+    //点击按钮，验证
+  async  btnlogin(){
+      // console.log(1111);
+        const res =await getaddUserApi({username:this.form.username,password:this.form.password});
+        console.log(res);
     }
   }
 };
