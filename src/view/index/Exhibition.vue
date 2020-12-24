@@ -34,7 +34,7 @@
     <van-image :src="icon02" />
     <span class="icon-txt">热门展览</span>
   </van-grid-item>
-  <van-grid-item>
+  <van-grid-item  @click="tocalendar">
     <van-image :src="icon03" />
     <span class="icon-txt">日历行程</span>
   </van-grid-item>
@@ -60,7 +60,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> 
 
 
  <!-- 正在热展模块 -->
@@ -185,6 +185,10 @@ export default {
     toclassifyshow(){
        this.$router.push("/classifyshow");
     },
+    //跳转到日历行程
+    tocalendar(){
+      this.$router.push("/calendar");
+    },
     
 
     //获取数据
@@ -197,7 +201,6 @@ export default {
     //点击展览，到详情页
     todetail(id){
       this.$router.push("/tickDetils/"+id);
-      
     }
   }
 };

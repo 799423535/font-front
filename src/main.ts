@@ -29,6 +29,7 @@ import {
     ShareSheet,
     DropdownMenu,
     DropdownItem,
+    Calendar
 } from 'vant';
 
 
@@ -80,4 +81,5 @@ app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
+app.use(Calendar);
 app.mount('#app');
