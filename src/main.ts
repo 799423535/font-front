@@ -23,7 +23,9 @@ import {
     SwipeItem,
     Toast,
     Search,
-    Image as VanImage
+    Image as VanImage,
+    ActionSheet,
+    Stepper 
 } from 'vant';
 
 
@@ -51,6 +53,8 @@ app.use(Popup);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(VanImage);
+app.use(ActionSheet)
+app.use(Stepper)
 //我的
 app.use(NavBar);
 app.use(Icon);
