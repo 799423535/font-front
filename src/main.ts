@@ -25,7 +25,8 @@ import {
     Search,
     Image as VanImage,
     ActionSheet,
-    Stepper 
+    Stepper,
+    ShareSheet
 } from 'vant';
 
 
@@ -76,3 +77,4 @@ app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
+app.use(ShareSheet);

@@ -45,18 +45,22 @@ const routes: any = [
     component: () => import('../view/exhibition/City.vue')
   },
   {
+    //笔记
     path: '/mine/note',
     component: () => import('./../view/mine/note.vue'),
   },
   {
+    //登录
     path: '/login/login',
     component: () => import('./../view/login/login.vue'),
   },
   {
+    //注册
     path: '/login/register',
     component: () => import('./../view/login/register.vue'),
   },
-  {
+  { 
+    //设置
     path: '/set/set',
     component: () => import('./../view/set/set.vue'),
   },

@@ -30,11 +30,11 @@
           <!-- <div >  -->
             <img class="small-portail" src="../../assets/slices/noteslices/head_img.png" alt="">   
           <!-- </div> -->
-          <div>
-            <p>昵称</p>
-            <p>data</p>
-            <p>text</p>
-            <div>
+          <div class="note-right">
+            <p style="font-size:12.67pt">昵称</p>
+            <p style="color:#969696;font-size:8.67pt">data</p>
+            <p style="font-size:14.67pt">text</p>
+            <div style="weight:94.67pt;height:94.67pt;background:pink">
              im
             </div>
             <div class="like">
@@ -46,7 +46,11 @@
             </div>
           </div>
        </div>
-      
+        
+
+        <div class="note-bottom"> 
+            <p style="text-align:center" >编辑个人资料</p>
+        </div>
     
    </div>
 </template>

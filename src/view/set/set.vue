@@ -27,7 +27,18 @@
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
+   setup() {
+    const show = ref(false);
+    const showPopup = () => {
+      show.value = true;
+    };
+    return {
+      show,
+      showPopup,
+    };
+  },
   data() {
     return {};
   },
@@ -44,6 +55,7 @@ export default {
       },
       //退出直接跳转到首页，登录退出
       exitclick(){
+      window.sessionStorage.clear();
        this.$router.push("/index/Home")
       }
   }

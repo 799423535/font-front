@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { Toast } from 'vant';
 import axios from "axios"
 import  { getaddUserApi } from "../../utils/api.ts"
 import { reactive } from 'vue';
@@ -67,9 +68,16 @@ export default {
     //点击按钮，验证
   async  btnlogin(){
         const res =await getaddUserApi({username:this.form.username,password:this.form.password});
+         if(res.state==0){
+         localStorage.setItem('token',res.token);
+         this.$router.replace("/login/login")
+         }else{
+          Toast(res.msg);
+        }
         console.log(res);
+    },   
     }
-  }
-};
+  };
+
 </script>
 <style lang='scss' scoped></style>
