@@ -4,7 +4,7 @@
     <div class="nav-bar">
       <span >兴趣分类</span>
       <div>
-        <span @click="exhibitionCity" class="title">北京市
+        <span @click="exhibitionCity" class="title">{{city.name}}
           <!-- <img src="../../assets/exhibitionimg/banner1xialakuang.png" alt=""> -->
         </span>
         <span>全球</span>
@@ -26,7 +26,7 @@
 
    <!-- 四个图片文字小格子 -->
 <van-grid :border="false" :column-num="4">
-  <van-grid-item>
+  <van-grid-item @click="toclassifyshow">
     <van-image :src="icon01" />
     <span class="icon-txt">分类看展</span>
   </van-grid-item>
@@ -53,7 +53,7 @@
     <!-- 购票内容 -->
     <div class="box">
       <ul>
-        <li v-for="item in list" >
+        <li v-for="item in list" @click="todetail(item._id)">
             <img :src="item.img" alt="">
             <p>{{item.title}}</p>
             <span>￥{{item.price}}</span> 
@@ -70,7 +70,7 @@
     <!-- 购票内容 -->
     <div class="box">
       <ul>
-        <li v-for="item in list" >
+        <li v-for="item in list"  @click="todetail(item._id)">
             <img :src="item.img" alt="">
             <p>{{item.title}}</p>
             <span>￥{{item.price}}</span> 
@@ -88,7 +88,7 @@
     <!-- 购票内容 -->
     <div class="box">
       <ul>
-        <li v-for="item in list" >
+        <li v-for="item in list" @click="todetail(item._id)">
             <img :src="item.img" alt="">
             <p>{{item.title}}</p>
             <span>￥{{item.price}}</span> 
@@ -134,19 +134,18 @@
             </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
 </template>
 
 <script>
+import { ref, reactive } from 'vue';
 import icon01 from "../../assets/exhibitionimg/icon01.png";
 import icon02 from "../../assets/exhibitionimg/icon02.png";
 import icon03 from "../../assets/exhibitionimg/icon03.png";
 import icon04 from "../../assets/exhibitionimg/icon04.png";
 import {getTickets} from "../../utils/api";
+import { store } from '../../store/index';
 
 export default {
   data() {
@@ -161,10 +160,15 @@ export default {
 
   components: {},
 
-  computed: {},
+  computed: {
+    city(){
+      return this.$store.state.exhibition.city;
+    }
+  },
 
   mounted() {
     this.getList();
+    
   },
 
   methods: {
@@ -176,8 +180,12 @@ export default {
     exhibitionCity(){
       console.log(111);
       this.$router.push("/city");
-    }
-    ,
+    },
+    //跳转到分类展览页面
+    toclassifyshow(){
+       this.$router.push("/classifyshow");
+    },
+    
 
     //获取数据
      async getList(){
@@ -188,7 +196,8 @@ export default {
 
     //点击展览，到详情页
     todetail(id){
-      this.$router.push("/showdetail/"+id);
+      this.$router.push("/tickDetils/"+id);
+      
     }
   }
 };
@@ -201,6 +210,11 @@ export default {
   height: 50px;
   line-height: 50px;
   color:#222222;
+  padding:0 10px;
+  span{
+    font-size: 16px;
+    
+  }
   .van-icon{
     line-height: center;
     font-size: 24px;

@@ -32,9 +32,9 @@ const routes: any = [
       }
     ]
   },
-  { //展览的详情页
-    path: "/showdetail",
-    component: () => import('../view/exhibition/ShowDetail.vue')
+  {  //分类看展
+    path:"/classifyshow",
+    component: () => import('../view/exhibition/Classifyshow.vue')
   },
   { //搜索页
     path: "/search",

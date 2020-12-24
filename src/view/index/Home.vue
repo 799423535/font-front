@@ -62,8 +62,9 @@
         </div>
 
         <van-tab :title="item.title" v-for="(item, i) in arr" :key="i">
-          <component :is="item.component"></component>
+           <component :is="item.component"></component>
         </van-tab>
+        
       </van-tabs>
     </nav>
   </div>
