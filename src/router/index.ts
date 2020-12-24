@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-const routes = [
+const routes: any = [
   {
     path: '/',
     component: () => import('./../App.vue'),
@@ -8,7 +8,7 @@ const routes = [
       {
         path: "/index",
         component: () => import('./../view/Index.vue'),
-        redirect: '/index/home',
+        redirect: '/index/home/recommend',
         children: [
           {
             path: '/index/home',
@@ -31,6 +31,10 @@ const routes = [
         ]
       }
     ]
+  },
+  { //展览的详情页
+    path: "/showdetail",
+    component: () => import('../view/exhibition/ShowDetail.vue')
   },
   { //搜索页
     path: "/search",

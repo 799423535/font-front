@@ -16,3 +16,5 @@ export const getdetailsApi = (datas: any) => http.post("/users/findUser", datas)
 export const getUsersApi = (datas: any) => http.post("/users/login", datas);
 
 export const getaddUserApi = (datas: any) => http.post("/users/addUser", datas);
+
+export const getfindTicket = (datas:any) => http.get("/tickets/getTickets", datas);
