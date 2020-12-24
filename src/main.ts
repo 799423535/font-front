@@ -23,6 +23,8 @@ import {
     SwipeItem,
     Toast,
     Search,
+    DropdownMenu,
+    DropdownItem,
     Image as VanImage
 } from 'vant';
 
@@ -44,6 +46,8 @@ app.use(router);
 app.use(store, key);
 app.use(Tabbar);
 app.use(TabbarItem);
+app.use(DropdownMenu);
+app.use(DropdownItem);
 //home
 app.use(Tab);
 app.use(Tabs);
@@ -67,8 +71,8 @@ app.use(Button);
 app.use(Skeleton);
 app.use(Image);
 app.use(Toast);
-app.mount('#app');
 app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
+app.mount('#app');

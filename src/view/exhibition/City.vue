@@ -50,6 +50,7 @@ export default {
 
     },
     citybtn(elm){  //点击后，这是全局的state
+    this.$store.commit("exhibition/changecity",elm)
       console.log(elm);
       this.$router.go(-1);//后退一步的页面
     }
