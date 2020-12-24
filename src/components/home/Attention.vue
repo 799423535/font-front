@@ -1,8 +1,8 @@
 <template>
-  <div>Recommend</div>
+  <div class="att">关注</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {};
@@ -17,4 +17,8 @@ export default {
   methods: {}
 };
 </script>
-<style lang='less' scoped></style>
+<style lang='less' scoped>
+.att{
+  text-align: center;
+}
+</style>

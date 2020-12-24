@@ -3,51 +3,33 @@ const routes = [
   {
     path: '/',
     component: () => import('./../App.vue'),
-    redirect: '/index/home/recommend',
+    redirect: '/index',
     children: [
       {
         path: "/index",
         component: () => import('./../view/Index.vue'),
-        redirect: '/index/home/recommend',
+        redirect: '/index/home',
         children: [
           {
-            path: "/index",
-            component: () => import('./../view/Index.vue'),
-            redirect: '/index/home',
-            children: [
-              {
-                path: '/index/home',
-                component: () => import('./../view/index/Home.vue'),
-                children: [
-                  {
-                    path: '/index/home/recommend',
-                    name: 'Recommend',
-                    component: () => import('./../view/home/Recommend.vue'),
-                  },
-                  {
-                    path: '/index/home/attention',
-                    name: 'Attention',
-                    component: () => import('./../view/home/Attention.vue'),
-                  },
-                ]
-              },
-              {
-                path: '/index/exhibition',
-                component: () => import('./../view/index/Exhibition.vue')
-              },
-              {
-                path: '/index/course',
-                component: () => import('./../view/index/Course.vue')
-              },
-              {
-                path: '/index/mine',
-                component: () => import('./../view/index/Mine.vue')
+            path: '/index/home',
+            component: () => import('./../view/index/Home.vue'),
 
-              }
-            ]
+          },
+          {
+            path: '/index/exhibition',
+            component: () => import('./../view/index/Exhibition.vue')
+          },
+          {
+            path: '/index/course',
+            component: () => import('./../view/index/Course.vue')
+          },
+          {
+            path: '/index/mine',
+            component: () => import('./../view/index/Mine.vue')
+
           }
         ]
-      },
+      }
     ]
   },
   { //搜索页
@@ -73,6 +55,14 @@ const routes = [
   {
     path: '/set/set',
     component: () => import('./../view/set/set.vue'),
+  },
+  {
+    path: "/tick",
+    component: () => import('./../view/tick/Tick.vue'),
+  },
+  {
+    path: "/tickDetils/:id",
+    component: () => import('./../view/details/Details.vue')
   },
   {
     path: '/:catchAll(.*)*',

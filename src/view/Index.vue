@@ -1,25 +1,31 @@
 <template>
   <div class="index">
     <router-view></router-view>
-    <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o" to="/index/home">首页</van-tabbar-item>
-      <van-tabbar-item icon="search" to="/index/exhibition"
-        >看展</van-tabbar-item
+    
+    <van-tabbar :route="true" :fixed="true" :placeholder="true">
+      <van-tabbar-item
+        v-for="(item, i) in arr"
+        :key="i"
+        :icon="item.icon"
+        :to="item.to"
+        >{{ item.title }}</van-tabbar-item
       >
-      <van-tabbar-item icon="friends-o">图标</van-tabbar-item>
-      <van-tabbar-item icon="setting-o" to="/index/course"
-        >课程</van-tabbar-item
-      >
-      <van-tabbar-item icon="setting-o" to="/index/mine">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 
 <script>
-export default {
+import { defineComponent, reactive } from "vue";
+export default defineComponent({
   setup() {
-    const active = 0;
-    return { active };
+    const arr = reactive([
+      { icon: "home-o", to: "/index/home", title: "首页" },
+      { icon: "search", to: "/index/exhibition", title: "看展" },
+      { icon: "friends-o", to: "", title: "图标" },
+      { icon: "setting-o", to: "/index/course", title: "课程" },
+      { icon: "setting-o", to: "/index/mine", title: "我的" },
+    ]);
+    return { arr };
   },
 
   components: {},
@@ -29,6 +35,6 @@ export default {
   mounted() {},
 
   methods: {},
-};
+});
 </script>
 <style lang='less' scoped></style>

@@ -6,14 +6,18 @@ export interface State {
 }
 
 export const key: InjectionKey<Store<State>> = Symbol();
-
-export const store = createStore({
-  state: {
-    count: 0
+import { home } from "./home";
+import { tick } from "./tick";
+import { details } from "./details";
+export const store: any = createStore({
+  modules: {
+    home,
+    tick,
+    details
   }
 })
 
 
-export function useStore () {
+export function useStore() {
   return baseUseStore(key);
 }

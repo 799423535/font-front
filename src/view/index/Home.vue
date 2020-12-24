@@ -15,7 +15,7 @@
           <img src="/@/assets/img/home/icon01.png" alt="" />
           <p>直播</p>
         </li>
-        <li>
+        <li @click="goTick">
           <img src="/@/assets/img/home/icon02.png" alt="" />
           <p>看展购票</p>
         </li>
@@ -36,46 +36,71 @@
 
     <!-- 全部分类 热展 vlog 海外 文创 买画 拍场 讲座 学术 设计 -->
     <nav class="nav">
-      <div class="ims" @click=""><img src="/@/assets/img/home/xiangxiajiantou.png" alt=""></div>
-      <!-- <li>关注</li>
-      <li>推荐</li>
-      <li>视频</li> -->
-      <van-tabs  color="#3388DE" v-model="active" line-width="30">
-        <van-tab title="关注" to="Attention"/>
-        <van-tab title="推荐" to="Recommend"/>
-        <van-tab title="视频"/>
-        <van-tab title="热展"/>
-        <van-tab title="vlog"/>
-        <van-tab title="海外"/>
-        <van-tab title="文创"/>
-        <van-tab title="买画"/>
-        <van-tab title="拍场"/>
-        <van-tab title="讲座"/>
-        <van-tab title="买画"/>
-        <van-tab title="学术"/>
-        <van-tab title="设计"/>
+      <van-tabs
+        @click="handlerClick"
+        color="#3388DE"
+        line-width="30"
+        :sticky="true"
+        v-model:active="active"
+      >
+        <div class="ims">
+          <van-cell is-link @click="showPopup">
+            <img src="/@/assets/img/home/xiangxiajiantou.png" alt="" />
+          </van-cell>
+          <van-popup
+            v-model:show="show"
+            position="top"
+            :style="{ height: '25%' }"
+          >
+            <p class="title">全部分类</p>
+            <ul class="boxul">
+              <li v-for="(item, i) in arr" @click="handlerClick(i)" :key="i">
+                {{ item.title }}
+              </li>
+            </ul>
+          </van-popup>
+        </div>
+
+        <van-tab :title="item.title" v-for="(item, i) in arr" :key="i">
+          <component :is="item.component"></component>
+        </van-tab>
       </van-tabs>
     </nav>
-    <router-view></router-view>
   </div>
-  
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, reactive } from "vue";
+import { useStore } from "vuex";
+import { fn } from "./../../functions/home/nav";
+import Attention from "./../../components/home/Attention.vue";
+import Recommend from "./../../components/home/Recommend.vue";
 export default defineComponent({
   setup() {
-    let active=1;
-    return {active};
+    const { arr, active, showPopup, show } = fn(reactive, ref);
+    return { arr, active, showPopup, show };
   },
 
-  components: {},
+  components: {
+    Attention,
+    Recommend,
+  },
 
   computed: {},
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    handlerClick(i: Number): void {
+      this.active = i;
+      localStorage.setItem("active", this.active + "");
+      this.show = false;
+      this.$forceUpdate();
+    },
+    goTick() {
+      this.$router.push("/tick");
+    },
+  },
 });
 </script>
 <style lang='less' scoped>
@@ -126,18 +151,19 @@ export default defineComponent({
     }
   }
 }
-.home  .nav {
+.home .nav {
   margin-top: 10px;
+  background: #fff;
   position: relative;
-  .ims{
+  .ims {
     position: absolute;
     right: 0;
+    top: 0;
     z-index: 999;
     width: 50px;
-    height: 50px;
+    height: 40px;
     background: #fff;
-    height: 100%;
-    img{
+    img {
       top: 50%;
       position: absolute;
       left: 0;
@@ -146,7 +172,26 @@ export default defineComponent({
       bottom: 0;
       margin: auto;
     }
-
+  }
+}
+.home .ims .title {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 25px;
+}
+.home .boxul {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  li {
+    font-size: 16px;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    background: #eee;
+    text-align: center;
+    margin-top: 5px;
   }
 }
 </style>

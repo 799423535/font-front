@@ -2,13 +2,31 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router/Index';
 import { key, store } from './store';
-import { Tabbar, TabbarItem ,NavBar,Icon, Col, Row , Grid, GridItem,Cell, CellGroup,Tab, Tabs,Field,Button,Skeleton,Image,Swipe,SwipeItem,} from 'vant';
+import {
+    Tabbar,
+    TabbarItem,
+    NavBar,
+    Icon,
+    Popup,
+    Col,
+    Row,
+    Grid,
+    GridItem,
+    Cell,
+    CellGroup,
+    Tab, Tabs,
+    Field,
+    Button,
+    Skeleton,
+    Image,
+    Swipe,
+    SwipeItem
+} from 'vant';
 
 
 import 'amfe-flexible';
 import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
-
 
 import 'vant/lib/index.css';
 import '/@/assets/styles/mine/mine.less';
@@ -16,8 +34,8 @@ import '/@/assets/styles/login/login.less';
 import '/@/assets/styles/login/register.less';
 import '/@/assets/styles/note/note.less';
 
-  
-const app=createApp(App);
+
+const app = createApp(App);
 app.use(router);
 app.use(store, key);
 app.use(Tabbar);
@@ -25,7 +43,9 @@ app.use(TabbarItem);
 //home
 app.use(Tab);
 app.use(Tabs);
-
+app.use(Popup);
+app.use(Swipe);
+app.use(SwipeItem);
 //我的
 app.use(NavBar);
 app.use(Icon);
