@@ -26,7 +26,9 @@ import {
     Image as VanImage,
     ActionSheet,
     Stepper,
-    ShareSheet
+    ShareSheet,
+    DropdownMenu,
+    DropdownItem,
 } from 'vant';
 
 
@@ -47,6 +49,8 @@ app.use(router);
 app.use(store, key);
 app.use(Tabbar);
 app.use(TabbarItem);
+app.use(DropdownMenu);
+app.use(DropdownItem);
 //home
 app.use(Tab);
 app.use(Tabs);
@@ -72,9 +76,8 @@ app.use(Button);
 app.use(Skeleton);
 app.use(Image);
 app.use(Toast);
-app.mount('#app');
 app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
-app.use(ShareSheet);
+app.mount('#app');

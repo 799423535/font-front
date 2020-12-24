@@ -5,7 +5,7 @@
         v-model="value"
         show-action
         background="#f6f6f6"
-        placeholder="请输入搜索关键词"
+        placeholder="搜索"
         @search="onSearch"
         @cancel="onCancel"
       />
@@ -67,7 +67,7 @@ export default {
     flex-wrap: nowrap;
     justify-content: space-around;
     padding: 8px;
-    background: #f6f6f6;
+    background: #ffffff;
     height: 40px;
     width: 100%;
   }
@@ -95,7 +95,7 @@ export default {
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: #f6f6f6;
+    background: #ffffff;
     border: 1px solid #dedede;
   }
 </style>
