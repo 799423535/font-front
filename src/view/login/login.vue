@@ -8,7 +8,7 @@
    
       <img src="../../assets/slices/loginslices/logo.jpg" alt="" class="logo">
     </div>
-  <van-tabs v-model: active="active"  >
+  <van-tabs v-model:active="active"  >
   <van-tab title="登录" >
     <van-cell-group>
    <van-field v-model="form.username" placeholder="手机/电子邮箱" class="login-btn frame"  />
