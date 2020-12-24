@@ -2,7 +2,7 @@
   <div class="mine">
     <!-- 标题 -->
     <div id="mine-title">
-      <van-nav-bar :class="mine-title"   title="我"
+      <van-nav-bar :class="mine-title"   fixed  title="我"
       right-text="设置"
       @click-right="gotoSet"
      >
@@ -13,7 +13,7 @@
     </div>
     
     <!-- 表头 -->
-    <div class="mine-head gap" style="margin-bottom:12px">
+    <div class="mine-head gap" style="margin-bottom:12px;margin-top:50px">
         <div class="portraits">
           <div class="portraits-top">
             <div class="portraits-ico" @click="gotoNote">

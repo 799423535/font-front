@@ -3,6 +3,7 @@
      <van-nav-bar
      title="我的笔记"
      left-arrow
+     fixed
      @click-left="onClickLeft"
 />
    <div  class="total">

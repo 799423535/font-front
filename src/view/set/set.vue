@@ -2,6 +2,7 @@
   <div class="set">
     <van-nav-bar class="set-o" title="设置"  
       left-arrow
+      fixed
       @click-left="gotoMine">
      </van-nav-bar>
  

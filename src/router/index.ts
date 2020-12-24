@@ -24,11 +24,15 @@ const routes: any = [
             component: () => import('./../view/index/Course.vue')
           },
           {
+            path: '/index/mine',
+            redirect: '/login/login',
+          },
+          {
             path: '/index/mine/:id',
             component: () => import('./../view/index/Mine.vue'),
             props:true
-
           }
+          
         ]
       }
     ]
