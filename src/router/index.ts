@@ -64,7 +64,8 @@ const routes: any = [
     path: "/tick",
     component: () => import('./../view/tick/Tick.vue'),
   },
-  {
+  { 
+    //详情页
     path: "/tickDetils/:id",
     component: () => import('./../view/details/Details.vue')
   },

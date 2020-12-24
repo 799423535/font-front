@@ -66,7 +66,6 @@ export default {
     },
     //点击按钮，验证
   async  btnlogin(){
-      // console.log(1111);
         const res =await getaddUserApi({username:this.form.username,password:this.form.password});
         console.log(res);
     }
