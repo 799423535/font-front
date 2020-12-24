@@ -23,7 +23,8 @@ import {
     SwipeItem,
     Toast,
     Search,
-    Image as VanImage
+    Image as VanImage,
+    ShareSheet
 } from 'vant';
 
 
@@ -72,3 +73,4 @@ app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
+app.use(ShareSheet);

@@ -47,6 +47,9 @@
   width: 40px;
   height: 40px;
 }
+.like {
+  margin-top: 5px;
+}
 .likelist {
   font-size: 12px;
   display: flex;
@@ -65,4 +68,18 @@
 }
 .note-content {
   display: flex;
+}
+.note-right {
+  padding-left: 5px;
+  text-indent: 10px;
+}
+.note-bottom {
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #A7A7A7;
+  font-size: 16px;
 }

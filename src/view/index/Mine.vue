@@ -159,20 +159,24 @@
      <div class="minetitle">帮助和反馈</div>
       <hr>
    <van-cell-group>
-    <van-cell title="意见反馈" is-link />
-    <van-cell title="分享在艺" is-link />
+    <van-cell title="意见反馈" is-link  />
+    <van-cell title="分享在艺" is-link  @click="showShare = true"  />
+    <van-share-sheet
+    v-model:show = "showShare":options="options"
+    @select="onSelect"
+  />
     <van-cell title="申请认证" is-link />
     <!-- <van-cell title="申请认证" is-link /> -->
    </van-cell-group>
    </div>
-
-  
   </div>
 </template>
 
 
 
 <script>
+import { ref } from 'vue';
+import { Toast } from 'vant';
 import icon from "../../assets/slices/mineslices/icon.png"
 import img1 from "../../assets/slices/mineslices/biji.png"
 import img2 from "../../assets/slices/mineslices/tiwen.png"
@@ -193,6 +197,25 @@ import a8 from "../../assets/slices/mineslices/pingxuan.png"
 
 import { getdetailsApi } from "../../utils/api"
 export default {
+   setup() {
+    const showShare = ref(false);
+    const options = [
+      { name: '微信', icon: 'wechat' },
+      { name: '微博', icon: 'weibo' },
+      { name: '复制链接', icon: 'link' },
+     
+    ];
+
+    const onSelect = (option) => {
+      Toast(option.name);
+      showShare.value = false;
+    };
+    return {
+      options,
+      onSelect,
+      showShare,
+    };
+  },
 data(){
   return {
     icon:icon,
@@ -214,9 +237,7 @@ data(){
     detailData:{},
   }
 },
-setup(){
 
-},
   components: {},
 
   computed: {},

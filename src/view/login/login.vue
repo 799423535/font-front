@@ -8,7 +8,7 @@
    
       <img src="../../assets/slices/loginslices/logo.jpg" alt="" class="logo">
     </div>
-  <van-tabs v-model: active="active"  >
+  <van-tabs v-model:active="active"  >
   <van-tab title="登录" >
     <van-cell-group>
    <van-field v-model="form.username" placeholder="手机/电子邮箱" class="login-btn frame"  />
@@ -48,6 +48,7 @@
 </template>
 
 <script>
+import { Toast } from 'vant';
 import {mapMutations} from "vuex"
 import axios from "axios"
 import  { getUsersApi } from "../../utils/api.ts"
@@ -83,8 +84,11 @@ export default {
     },
     async sendLogin(){
       const res = await  getUsersApi({username:this.form.username,password:this.form.password});
-      if(res.token){
+      if(res.state==0){
+         localStorage.setItem('token',res.token);
          this.$router.replace("/index/mine")
+      }else{
+         Toast(res.msg);
       }
       console.log(res);
     },   
