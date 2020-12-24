@@ -5,5 +5,5 @@ export const getdetailsApi = (datas:any) => http.post("/users/findUser",datas);
 
 // 登录
 export const getUsersApi = (datas:any) => http.post("/users/login", datas);
-
+//注册
 export const getaddUserApi = (datas:any) => http.post("/users/addUser", datas);
