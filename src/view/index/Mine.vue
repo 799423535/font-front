@@ -162,7 +162,7 @@
     <van-cell title="意见反馈" is-link  />
     <van-cell title="分享在艺" is-link  @click="showShare = true"  />
     <van-share-sheet
-    v-model:show = "showShare":options="options"
+    v-model:show = "showShare" :options="options"
     @select="onSelect"
   />
     <van-cell title="申请认证" is-link />
