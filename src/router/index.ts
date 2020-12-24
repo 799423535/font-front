@@ -8,7 +8,7 @@ const routes: any = [
       {
         path: "/index",
         component: () => import('./../view/Index.vue'),
-        redirect: '/index/home/recommend',
+        redirect: '/index/home',
         children: [
           {
             path: '/index/home',
