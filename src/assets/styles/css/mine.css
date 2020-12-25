@@ -2,6 +2,9 @@ body {
   background-color: #f5f5f5 !important;
   color: #333;
 }
+.mine-title {
+  position: fixed;
+}
 .van-nav-bar .van-icon {
   color: #333;
 }

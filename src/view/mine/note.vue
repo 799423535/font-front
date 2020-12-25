@@ -9,9 +9,9 @@
           <li style="color:#000; font-weight:600">3.2k </li>
           <li>获赞</li>
           <li>|</li>
-          <li style="color:#52ABF0">69</li>
+          <li style="color:#52ABF0">{{list.attention}}</li>
           <li>关注</li>
-          <li style="color:#52ABF0">530</li>
+          <li style="color:#52ABF0">{{list.fans}}</li>
           <li>粉丝</li>
         </ul>
          
@@ -24,19 +24,17 @@
 
      </div>
        
-       <!--  -->
-       <van-cell title="我的笔记" value="1条笔记" is-link   style="color:#52ABF0;font-weight:600 ;"/>
-       <div style="background:#fff" class="note-content">
+       <div class="notes">
+          <van-cell title="我的笔记" value="2条笔记" is-link   style="color:#52ABF0;font-weight:600 ;"/>
+       <div style="background:#fff;" class="note-content"  v-for="(item , index ) in list.details" :key="index">
           <!-- <div >  -->
-            <img class="small-portail" src="../../assets/slices/noteslices/head_img.png" alt="">   
+         <img class="small-portail" src="../../assets/slices/noteslices/head_img.png" alt="">   
           <!-- </div> -->
-          <div class="note-right">
-            <p style="font-size:12.67pt">昵称</p>
-            <p style="color:#969696;font-size:8.67pt">data</p>
-            <p style="font-size:14.67pt">text</p>
-            <div style="weight:94.67pt;height:94.67pt;background:pink">
-             im
-            </div>
+          <div class="note-right" >
+            <p style="font-size:12.67pt">{{list.username}}</p>
+            <p style="color:#969696;font-size:8.67pt">{{list.details[index].data}}</p>
+            <p style="font-size:14.67pt">{{list.details[index].text}}</p>
+             <div style="margin:10px 0"><img :src="list.img" alt=""></div>
             <div class="like">
               <ul class="likelist">
                 <li><img src="../../assets/slices/noteslices/btn_forward.png" alt=""> <span>转发</span> </li>
@@ -46,6 +44,8 @@
             </div>
           </div>
        </div>
+       </div>
+      
         
 
         <div class="note-bottom"> 
@@ -56,17 +56,29 @@
 </template>
 
 <script>
+import {getdetailsApi} from "../../utils/api";
 
 export default {
+  props:["id"],
+  data(){
+    return {
+      list:{}
+    }
+  },
   methods:{
     gotoMine(){
-      this.$router.push("/index/mine")
-
+      this.$router.push("/index/mine/"+this.id)
+    },
+    //获取个人详情信息
+    async getdetails(){
+      const res = await getdetailsApi({_id:this.id});
+      this.list = res.results;
+      console.log(res.results);
     }
-  }
+  },
+  mounted(){
+    this.getdetails();
+    }
+  
 }
 </script>
-
-<style>
-
-</style>

@@ -49,9 +49,9 @@
 
 <script>
 import { Toast } from 'vant';
-import {mapMutations} from "vuex"
-import axios from "axios"
-import  { getUsersApi } from "../../utils/api.ts"
+import {mapMutations} from "vuex";
+import axios from "axios";
+import  { getUsersApi } from "../../utils/api.ts";
 import { ref , reactive, onMounted} from 'vue';
 export default {
 
@@ -84,13 +84,14 @@ export default {
     },
     async sendLogin(){
       const res = await  getUsersApi({username:this.form.username,password:this.form.password});
-      if(res.state==0){
+      if(res.status==0){
          localStorage.setItem('token',res.token);
-         this.$router.replace("/index/mine")
+         
+         this.$router.push("/index/mine/"+ res.token);
       }else{
          Toast(res.msg);
       }
-      console.log(res);
+      // console.log(res);
     },   
     // async login(){
     //   const res = await getUsersApi({

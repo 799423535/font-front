@@ -2,6 +2,7 @@
   <div class="set">
     <van-nav-bar class="set-o" title="设置"  
       left-arrow
+      fixed
       @click-left="gotoMine">
      </van-nav-bar>
  
@@ -27,8 +28,11 @@
 </template>
 
 <script>
+import {getdetailsApi} from "../../utils/api";
 import { ref } from 'vue';
+
 export default {
+  props:["id"],
    setup() {
     const show = ref(false);
     const showPopup = () => {
@@ -51,7 +55,7 @@ export default {
 
   methods: {
       gotoMine(){
-        this.$router.push("/index/mine")
+        this.$router.push("/index/mine/"+this.id)
       },
       //退出直接跳转到首页，登录退出
       exitclick(){

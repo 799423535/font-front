@@ -66,8 +66,14 @@
   height: 20px;
   line-height: 20px;
 }
+.mytotal {
+  width: 100%;
+  background-color: #fff;
+}
 .note-content {
   display: flex;
+  margin-bottom: 10px;
+  padding-top: 20px;
 }
 .note-right {
   padding-left: 5px;
@@ -82,4 +88,7 @@
   bottom: 0;
   border-top: 1px solid #A7A7A7;
   font-size: 16px;
+}
+.notes {
+  margin-bottom: 80px;
 }
