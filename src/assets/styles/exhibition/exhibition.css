@@ -14,7 +14,8 @@
 .exhibition .van-icon {
   color: #39a9ed;
 }
-.exhibition .van-cell {
+.exhibition .van-cell__title {
+  padding-left: 10px;
   border-left: #39a9ed 5px solid;
 }
 .exhibition .van-icon {
