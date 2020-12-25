@@ -65,4 +65,17 @@ export default {
   }
 };
 </script>
-<style lang='scss' scoped></style>
+<style lang='less' scoped>
+.set-o{
+  background: #F6F6F6;
+}
+
+.set-line{
+  border-bottom: 1px  solid   #D7D7D7;;
+}
+
+.van-cell-group__title{
+  padding: 6px;
+}
+
+</style>

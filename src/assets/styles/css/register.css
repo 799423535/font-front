@@ -1,15 +1,18 @@
-body {
+.rregister {
   background-color: #fff;
+  height: 667px;
 }
-.register {
+.rregister .register {
   width: 80%;
   margin: auto;
 }
-.email {
-  height: 667px;
-  background-color: #fff;
-}
-.cor {
+.rregister .cor {
   width: 185px;
-  margin-right: 10px;
+}
+.rregister .serve {
+  font-size: 12px;
+  float: right;
+  background: #fff;
+  color: #333;
+  margin-top: 20px;
 }

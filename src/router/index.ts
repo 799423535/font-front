@@ -87,6 +87,11 @@ const routes: any = [
     component: () => import('./../view/details/Details.vue')
   },
   {
+    //标准件
+    path:"/mine/standard",
+    component: () =>import('./../view/mine/standard.vue')
+  },
+  {
     path: '/:catchAll(.*)*',
     component: () => import('./../view/404.vue'),
   },

@@ -29,6 +29,7 @@ import {
     ShareSheet,
     DropdownMenu,
     DropdownItem,
+    Pagination
 } from 'vant';
 
 
@@ -41,9 +42,8 @@ import '/@/assets/styles/mine/mine.less';
 import '/@/assets/styles/login/login.less';
 import '/@/assets/styles/login/register.less';
 import '/@/assets/styles/note/note.less';
-import '/@/assets/styles/set/set.less';
 import '/@/assets/styles/note/mynote.less';
-
+import './assets/styles/css/iconfront/iconfont.css';
 
 const app = createApp(App);
 app.use(router);
@@ -82,4 +82,5 @@ app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
 app.use(ShareSheet);
+app.use(Pagination);
 app.mount('#app');

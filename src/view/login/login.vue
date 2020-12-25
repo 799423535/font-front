@@ -1,5 +1,5 @@
 <template>
-<div style="background:#fff">
+<div class="loginn">
   <div>
      <img src="../../assets/slices/loginslices/quxiao.png" alt="" style="margin:10px" @click="goback">
   </div>
@@ -87,20 +87,56 @@ export default {
       if(res.status==0){
          localStorage.setItem('token',res.token);
          
-         this.$router.push("/index/mine/"+ res.token);
+         this.$router.push("/index/mine/"+res.token);
       }else{
          Toast(res.msg);
       }
-      // console.log(res);
+    
     },   
-    // async login(){
-    //   const res = await getUsersApi({
-
-    //   });
-      // localStorage.setItem("token",res.result.token);
-      // this.$router.replace("/index/mine")
-    // }
+  
   }
 };
 </script>
-<style lang='scss' scoped></style>
+<style lang='less' scoped>
+.login{
+  width: 80%;
+  margin: auto;
+
+}
+
+.frame{
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    margin-bottom: 18px;
+}
+
+
+.line-left{
+  margin-top: 50px;
+  width: 128px;
+  height: 3px;
+  background: linear-gradient(90deg, #F6F6F6 0%, #777777 100%);
+}
+.line-right{
+  margin-top: 50px;
+  width: 128px;
+  height: 3px;
+  background: linear-gradient(90deg, #777777 0%, #F6F6F6 100%);
+}
+.other-line{
+  display: flex;
+  justify-content: space-around;
+}
+.other-img{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.logo{
+  margin: auto;
+  display: block;
+  transform: scale(0.5);
+}
+</style>

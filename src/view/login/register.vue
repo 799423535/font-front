@@ -1,5 +1,5 @@
 <template>
-<div class="email">
+<div class="rregister">
     <van-nav-bar
     title="机构注册"
     left-arrow
@@ -10,16 +10,16 @@
      <div style="display:flex">
        <van-field
     v-model="form.password"
-    placeholder="验证码"
+    placeholder="请输入密码"
     class="frame cor"
  />
-     <van-button  type="primary" style="margin-top:27px" @click="btnlogin">发送验证码</van-button>
-     
+     <van-button  type="primary" @click="btnlogin">确认密码</van-button>
+
      </div>
     
 
       
-    <div style="font-size:12px;float:right ;background:#fff ;color:#333">
+    <div class="serve">
       注册即视为同意<span style="color:blue">《用户服务条款》《隐私政策》</span>
     </div>
   
@@ -80,4 +80,6 @@ export default {
   };
 
 </script>
-<style lang='scss' scoped></style>
+<style lang='less' scoped>
+
+</style>
