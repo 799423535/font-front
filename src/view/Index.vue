@@ -23,7 +23,7 @@ export default defineComponent({
       { icon: "search", to: "/index/exhibition", title: "看展" },
       { icon: "friends-o", to: "", title: "图标" },
       { icon: "setting-o", to: "/index/course", title: "课程" },
-      { icon: "setting-o", to: "/index/mine", title: "我的" },
+      { icon: "manager", to: "/index/mine", title: "我的" },
     ]);
     return { arr };
   },

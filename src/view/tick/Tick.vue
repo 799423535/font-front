@@ -35,17 +35,13 @@ export default defineComponent({
     };
     return { goDetails };
   },
-
   components: {},
-
   computed: {
     tickList() {
       return this.$store.state.tick.tickList;
     },
   },
-
   mounted() {},
-
   methods: {
     onClickLeft() {
       this.$router.go(-1);

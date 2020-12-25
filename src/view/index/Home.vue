@@ -40,7 +40,8 @@
         @click="handlerClick"
         color="#3388DE"
         line-width="30"
-        :sticky="true"
+        sticky
+        animate
         v-model:active="active"
       >
         <div class="ims">

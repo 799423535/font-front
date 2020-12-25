@@ -48,5 +48,4 @@ export default {
     height: 160px;
   }
 }
-
 </style>

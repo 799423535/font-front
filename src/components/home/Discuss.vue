@@ -11,16 +11,23 @@
             <img src="./../../assets/img/home/guanzhu.png" alt="" />
             关注
           </div>
-          <div class="rad"><span>...</span></div>
+          <img src="./../../assets/img/home/liebiao.png" alt="" />
         </div>
       </div>
       <div class="main">
         <div class="left">
-          <img :src="item.main" alt="" />
+          <van-image
+            :src="item.main"
+            width="210"
+            height="210"
+            lazy-load
+            radius="5"
+            alt=""
+          />
         </div>
         <div class="right">
-          <img :src="item.rightimg1" alt="" />
-          <img :src="item.rightimg2" alt="" />
+          <van-image radius="5" lazy-load :src="item.rightimg1" width="110" height="103" alt="" />
+          <van-image radius="5" lazy-load :src="item.rightimg2" width="110" height="103" alt="" />
         </div>
       </div>
       <p class="title">{{ item.title }}</p>
@@ -46,11 +53,11 @@
       <p class="title">你可能感兴趣的用户</p>
       <ul class="user-item">
         <li v-for="(item, i) in userList" :key="i">
-          <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="">
+          <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="" />
           <img :src="item.img" alt="" />
           <p class="ft">{{ item.title }}</p>
           <p class="ft">{{ item.subtitle }}</p>
-          <p class="ft">{{item.count}} 笔记</p>
+          <p class="ft">{{ item.count }} 笔记</p>
           <div class="att">+ 关注</div>
         </li>
       </ul>
@@ -126,6 +133,7 @@ export default defineComponent({
       }
       .rad {
         font-size: 20px;
+        background: white;
       }
     }
   }
@@ -140,17 +148,19 @@ export default defineComponent({
     img {
       width: 210px;
       height: 210px;
+      border-radius: 5px;
     }
   }
   .right {
     width: 110px;
-    img {
-      width: 126px;
-      height: 103px;
+    .van-image {
+      margin: 0;
       display: block;
+      
+      
     }
-    img:nth-child(2) {
-      margin-top: 6px;
+    .van-image:nth-child(2) {
+      margin-top: 4px;
     }
   }
 }
@@ -231,7 +241,7 @@ export default defineComponent({
         height: 80px;
         border-radius: 50%;
       }
-      .cls{
+      .cls {
         position: absolute;
         right: 0;
         top: 0;
@@ -239,13 +249,13 @@ export default defineComponent({
         height: 22px;
         margin: 0;
       }
-      .att{
+      .att {
         width: 115px;
         height: 24px;
         line-height: 24px;
-        border:1px solid #6DACEB;
+        border: 1px solid #6daceb;
         font-size: 12px;
-        color: #6DACEB;
+        color: #6daceb;
         position: absolute;
         bottom: 10px;
         left: 0;
@@ -255,7 +265,7 @@ export default defineComponent({
     }
   }
 }
-.dis .ft{
+.dis .ft {
   font-size: 14px;
   margin-top: 15px;
 }
