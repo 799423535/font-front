@@ -68,7 +68,7 @@ app.use(Stepper);
 app.use(ShareSheet);
 app.use(Lazyload);
 app.use(PullRefresh);
-app.use(List)
+app.use(List);
  
 //我的
 app.use(NavBar);

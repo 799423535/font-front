@@ -65,7 +65,7 @@
     </div>
     <div class="user">
       <p class="title">你可能感兴趣的用户</p>
-      <div class="dt">
+      <div class="ut">
         <ul class="user-item">
           <li v-for="(item, i) in userList" :key="i">
             <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="" />
@@ -238,9 +238,10 @@ export default defineComponent({
     padding: 10px 0;
   }
   .ut {
+    overflow: auto;
+    width: 100%;
     .user-item {
       display: inline-flex;
-      overflow: auto;
       li {
         flex-shrink: 0;
         width: 150px;
