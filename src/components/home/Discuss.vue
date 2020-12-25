@@ -26,8 +26,22 @@
           />
         </div>
         <div class="right">
-          <van-image radius="5" lazy-load :src="item.rightimg1" width="110" height="103" alt="" />
-          <van-image radius="5" lazy-load :src="item.rightimg2" width="110" height="103" alt="" />
+          <van-image
+            radius="5"
+            lazy-load
+            :src="item.rightimg1"
+            width="110"
+            height="103"
+            alt=""
+          />
+          <van-image
+            radius="5"
+            lazy-load
+            :src="item.rightimg2"
+            width="110"
+            height="103"
+            alt=""
+          />
         </div>
       </div>
       <p class="title">{{ item.title }}</p>
@@ -51,16 +65,18 @@
     </div>
     <div class="user">
       <p class="title">你可能感兴趣的用户</p>
-      <ul class="user-item">
-        <li v-for="(item, i) in userList" :key="i">
-          <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="" />
-          <img :src="item.img" alt="" />
-          <p class="ft">{{ item.title }}</p>
-          <p class="ft">{{ item.subtitle }}</p>
-          <p class="ft">{{ item.count }} 笔记</p>
-          <div class="att">+ 关注</div>
-        </li>
-      </ul>
+      <div class="dt">
+        <ul class="user-item">
+          <li v-for="(item, i) in userList" :key="i">
+            <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="" />
+            <img :src="item.img" alt="" />
+            <p class="ft">{{ item.title }}</p>
+            <p class="ft">{{ item.subtitle }}</p>
+            <p class="ft">{{ item.count }} 笔记</p>
+            <div class="att">+ 关注</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +84,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useStore } from "./../../store/index";
+import BetterScroll from "better-scroll";
 export default defineComponent({
   setup() {
     const store = useStore();
@@ -91,7 +108,7 @@ export default defineComponent({
   methods: {},
 });
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .dis .single {
   height: 376px;
   width: 100%;
@@ -156,8 +173,6 @@ export default defineComponent({
     .van-image {
       margin: 0;
       display: block;
-      
-      
     }
     .van-image:nth-child(2) {
       margin-top: 4px;
@@ -222,45 +237,46 @@ export default defineComponent({
     font-size: 12px;
     padding: 10px 0;
   }
-  .user-item {
-    width: 100%;
-    display: flex;
-    overflow: auto;
-    li {
-      flex-shrink: 0;
-      width: 150px;
-      height: 280px;
-      text-align: center;
-      border: 1px solid #eee;
-      margin: 0 3px;
-      position: relative;
-      border-radius: 5px;
-      img {
-        margin-top: 12px;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-      }
-      .cls {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 22px;
-        height: 22px;
-        margin: 0;
-      }
-      .att {
-        width: 115px;
-        height: 24px;
-        line-height: 24px;
-        border: 1px solid #6daceb;
-        font-size: 12px;
-        color: #6daceb;
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        right: 0;
-        margin: auto;
+  .ut {
+    .user-item {
+      display: inline-flex;
+      overflow: auto;
+      li {
+        flex-shrink: 0;
+        width: 150px;
+        height: 280px;
+        text-align: center;
+        border: 1px solid #eee;
+        margin: 0 3px;
+        position: relative;
+        border-radius: 5px;
+        img {
+          margin-top: 12px;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+        .cls {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 22px;
+          height: 22px;
+          margin: 0;
+        }
+        .att {
+          width: 115px;
+          height: 24px;
+          line-height: 24px;
+          border: 1px solid #6daceb;
+          font-size: 12px;
+          color: #6daceb;
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
       }
     }
   }
