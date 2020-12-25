@@ -1,79 +1,79 @@
-body {
+.mine body {
   background-color: #f5f5f5 !important;
   color: #333;
 }
-.mine-title {
+.mine .mine-title {
   position: fixed;
 }
-.van-nav-bar .van-icon {
+.mine .van-nav-bar .van-icon {
   color: #333;
 }
-.van-nav-bar__text {
+.mine .van-nav-bar__text {
   color: #333;
 }
-.mine {
+.mine .mine {
   font-size: 12px;
 }
-.gap {
+.mine .gap {
   margin-bottom: 8px;
 }
-.mine-head {
+.mine .mine-head {
   background-color: #fff;
   margin-bottom: 8px;
 }
-.money {
+.mine .money {
   height: 60px;
   background: #fff;
   display: flex;
   justify-content: space-around;
 }
-.money .order {
+.mine .money .order {
   width: 50%;
   display: flex;
 }
-.money .order .order-left {
+.mine .money .order .order-left {
   width: 50%;
   height: 60px;
   line-height: 30px;
 }
-.money .order .order-right {
+.mine .money .order .order-right {
   width: 30px;
   height: 30px;
   margin-left: 20px;
   margin-top: 15px;
 }
-.money .purse {
+.mine .money .purse {
   position: relative;
   left: 10px;
   display: flex;
   margin-left: -100px;
 }
-.money .purse .purse-left {
+.mine .money .purse .purse-left {
   height: 60px;
   line-height: 30px;
   margin-left: -2px;
 }
-.money .purse .purse-right {
+.mine .money .purse .purse-right {
   width: 30px;
   height: 30px;
   margin-top: 15px;
   margin-left: 25px;
 }
-.money .purse .purse-right img {
+.mine .money .purse .purse-right img {
   position: relative;
   left: -5px;
 }
-.money .money-line {
+.mine .money .money-line {
   height: 50px;
   border-left: 1px #333 solid;
   position: relative;
   top: 6px;
   left: -70px;
 }
-.help {
+.mine .help {
   margin-bottom: 50px;
 }
-.member {
+.mine .member {
   display: inline;
   text-align: center;
   height: 23px;
@@ -84,29 +84,29 @@ body {
   font-weight: bold;
   width: 73px;
 }
-.member .member-center {
+.mine .member .member-center {
   display: inline-block;
   position: relative;
   top: -6px;
 }
-.van-image {
+.mine .van-image {
   margin-bottom: 8px;
 }
-.xcgl {
+.mine .xcgl {
   transform: scale(0.3);
 }
-.xcgl2 {
+.mine .xcgl2 {
   position: relative;
   top: -20px;
 }
-.spansize {
+.mine .spansize {
   font-size: 8px;
   color: #777 !important;
 }
-.headimg {
+.mine .headimg {
   width: 40px;
 }
-.minetitle {
+.mine .minetitle {
   font-size: 14px;
   font-weight: 600;
 }

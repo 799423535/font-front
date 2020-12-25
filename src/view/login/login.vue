@@ -1,6 +1,6 @@
 <template>
-<div style="background:#fff">
-  <div>
+<div class="outline" >
+  <div class="logo-img">
      <img src="../../assets/slices/loginslices/quxiao.png" alt="" style="margin:10px" @click="goback">
   </div>
     <div class="login" >
@@ -44,7 +44,6 @@
   
   </div>
 </div>
-  
 </template>
 
 <script>
@@ -87,7 +86,7 @@ export default {
       if(res.status==0){
          localStorage.setItem('token',res.token);
          
-         this.$router.push("/index/mine/"+ res.token);
+         this.$router.go(-1);
       }else{
          Toast(res.msg);
       }

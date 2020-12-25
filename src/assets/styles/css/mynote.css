@@ -1,9 +1,9 @@
-.total {
+.mynote .total {
   width: 100%;
   background-color: #fff;
   height: 35px;
 }
-.total-tilte {
+.mynote .total-tilte {
   margin-left: 10px;
   display: inline-block;
   border-bottom: 4px solid skyblue ;
@@ -12,26 +12,26 @@
   color: skyblue;
   font-weight: 600;
 }
-.mynote-top {
+.mynote .mynote-top {
   font-size: 14px;
   margin-right: 10px;
 }
-.pro {
+.mynote .pro {
   width: 40px;
   margin: 10px 0 0 10px;
 }
-.pro-title {
+.mynote .pro-title {
   line-height: 20px;
   height: 20px;
   position: relative;
   top: -10px;
   left: 5px;
 }
-.mytotal {
+.mynote .mytotal {
   border-bottom: 1px solid #a7a7a7;
   margin-bottom: 10px;
 }
-.appraise {
+.mynote .appraise {
   margin: 10px;
   width: 90%;
   text-align: center;
@@ -39,10 +39,10 @@
   display: flex;
   justify-content: space-between;
 }
-.appraise img {
+.mynote .appraise img {
   vertical-align: bottom;
 }
-.appraise span {
+.mynote .appraise span {
   display: inline-block;
   height: 20px;
   line-height: 20px;
