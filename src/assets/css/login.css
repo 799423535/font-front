@@ -1,0 +1,51 @@
+.outline {
+  background-color: #fff;
+  padding-bottom: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.outline .login {
+  width: 80%;
+  margin: auto;
+}
+.outline .frame {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  margin-bottom: 18px;
+  margin-top: 25px;
+}
+.outline .loin-block {
+  margin: 20px 0;
+}
+.outline .line-left {
+  margin-top: 50px;
+  width: 128px;
+  height: 3px;
+  background: linear-gradient(90deg, #F6F6F6 0%, #777777 100%);
+}
+.outline .line-right {
+  margin-top: 50px;
+  width: 128px;
+  height: 3px;
+  background: linear-gradient(90deg, #777777 0%, #F6F6F6 100%);
+}
+.outline .other-line {
+  display: flex;
+  justify-content: space-around;
+}
+.outline .other-img {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.outline .van-tabs__line {
+  background-color: #333333;
+}
+.outline .logodiv {
+  display: flex;
+  justify-content: center;
+}
+.outline .logo {
+  transform: scale(0.5);
+}

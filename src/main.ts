@@ -29,9 +29,7 @@ import {
     ShareSheet,
     DropdownMenu,
     DropdownItem,
-    Lazyload,
-    PullRefresh,
-    List 
+    Calendar
 } from 'vant';
 
 
@@ -65,9 +63,7 @@ app.use(VanImage);
 app.use(ActionSheet);
 app.use(Stepper);
 app.use(ShareSheet);
-app.use(Lazyload);
-app.use(PullRefresh);
-app.use(List)
+
  
 //我的
 app.use(NavBar);
@@ -89,5 +85,6 @@ app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
+app.use(Calendar);
 app.use(ShareSheet);
 app.mount('#app');

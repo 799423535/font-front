@@ -37,7 +37,11 @@ const routes: any = [
       }
     ]
   },
-  {  //分类看展
+  { //日历行程
+    path:"/calendar",
+    component: () => import('../view/exhibition/Calendar.vue')
+  },
+  {  //分类看展alendar
     path:"/classifyshow",
     component: () => import('../view/exhibition/Classifyshow.vue')
   },

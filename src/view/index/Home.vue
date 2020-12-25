@@ -108,6 +108,9 @@ export default defineComponent({
 <style lang='less' scoped>
 .home {
   background: #f5f5f5;
+  .dis{
+    background: #f5f5f5;
+  }
 }
 .home .head {
   width: 100%;
@@ -176,6 +179,7 @@ export default defineComponent({
     }
   }
 }
+
 .home .ims .title {
   text-align: center;
   padding-top: 10px;
@@ -195,5 +199,6 @@ export default defineComponent({
     text-align: center;
     margin-top: 5px;
   }
+  
 }
 </style>
