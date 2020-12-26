@@ -34,7 +34,8 @@ import {
     PullRefresh,
     List,
     Overlay,
-    Pagination 
+    Pagination,
+    Loading 
 } from 'vant';
 
 
@@ -71,6 +72,8 @@ app.use(ShareSheet);
 app.use(Lazyload);
 app.use(PullRefresh);
 app.use(List);
+app.use(Loading);
+
  
 //我的
 app.use(NavBar);

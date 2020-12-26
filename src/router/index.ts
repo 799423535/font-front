@@ -30,27 +30,27 @@ const routes: any = [
           {
             path: '/index/mine/:id',
             component: () => import('./../view/index/Mine.vue'),
-            props:true
+            props: true
           }
-          
+
         ]
       }
     ]
   },
   { //附近展览
-    path:"/nearbyshow",
+    path: "/nearbyshow",
     component: () => import('../view/exhibition/NearbyShow.vue')
   },
   { //热门展览
-    path:"/hotshow",
+    path: "/hotshow",
     component: () => import('../view/exhibition/HotShow.vue')
   },
   { //日历行程
-    path:"/calendar",
+    path: "/calendar",
     component: () => import('../view/exhibition/Calendar.vue')
   },
   {  //分类看展alendar
-    path:"/classifyshow",
+    path: "/classifyshow",
     component: () => import('../view/exhibition/Classifyshow.vue')
   },
   { //搜索页
@@ -65,13 +65,13 @@ const routes: any = [
     //笔记
     path: '/mine/note/:id',
     component: () => import('./../view/mine/note.vue'),
-    props:true
+    props: true
   },
   {
     //我的笔记
     path: '/mine/mynote/:id',
     component: () => import('./../view/mine/mynote.vue'),
-    props:true
+    props: true
   },
   {
     //登录
@@ -83,17 +83,34 @@ const routes: any = [
     path: '/login/register',
     component: () => import('./../view/login/register.vue'),
   },
-  { 
+  {
     //设置
     path: '/set/set/:id',
     component: () => import('./../view/set/set.vue'),
-    props:true
+    props: true
   },
+  //演出介绍页
   {
     path: "/tick",
     component: () => import('./../view/tick/Tick.vue'),
   },
-  { 
+  //商城页面
+  {
+    path: "/shop",
+    redirect:"/shop/store",
+    component: () => import('./../view/shop/Shop.vue'),
+    children: [
+      {
+        path: "/shop/store",
+        component: () => import("./../view/shop/Store.vue")
+      },
+      {
+        path: "/shop/task",
+        component: () => import("./../view/shop/Tesk.vue")
+      }
+    ]
+  },
+  {
     //详情页
     path: "/tickDetils/:id",
     component: () => import('./../view/details/Details.vue')

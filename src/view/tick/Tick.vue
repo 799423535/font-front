@@ -1,11 +1,6 @@
 <template>
   <div class="tick">
-    <van-nav-bar
-      title="特惠购票"
-      left-arrow
-      @click-left="onClickLeft"
-      :border="true"
-    />
+    <van-nav-bar title="特惠购票" left-arrow @click-left="onClickLeft" :border="true" />
     <ul class="prod">
       <li v-for="(item, i) in tickList" @click="goDetails(item._id)">
         <img :src="item.img" alt="" />
@@ -22,7 +17,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "/@/store/index";
 export default defineComponent({
@@ -33,14 +28,13 @@ export default defineComponent({
     const goDetails = (i) => {
       router.push(`/tickDetils/${i}`);
     };
-    return { goDetails };
+    const tickList = computed(() => {
+      return store.state.tick.tickList;
+    });
+    return { goDetails, tickList };
   },
   components: {},
-  computed: {
-    tickList() {
-      return this.$store.state.tick.tickList;
-    },
-  },
+  computed: {},
   mounted() {},
   methods: {
     onClickLeft() {
@@ -49,7 +43,7 @@ export default defineComponent({
   },
 });
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .prod {
   li {
     padding: 10px 10px;

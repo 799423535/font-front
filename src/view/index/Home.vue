@@ -15,7 +15,7 @@
           <img src="/@/assets/img/home/icon02.png" alt="" />
           <p>看展购票</p>
         </li>
-        <li>
+        <li @click="goShop">
           <img src="/@/assets/img/home/icon03.png" alt="" />
           <p>商城</p>
         </li>
@@ -66,14 +66,13 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from "vue";
-import { useStore } from "vuex";
 import { fn } from "./../../functions/home/nav";
 import Attention from "./../../components/home/Attention.vue";
 import Recommend from "./../../components/home/Recommend.vue";
 export default defineComponent({
   setup() {
-    const { arr, active, showPopup, show } = fn(reactive, ref);
-    return { arr, active, showPopup, show };
+    const { arr, active, showPopup, show, goTick, goShop } = fn(reactive, ref);
+    return { arr, active, showPopup, show, goTick, goShop };
   },
 
   components: {
@@ -92,13 +91,13 @@ export default defineComponent({
       this.show = false;
       this.$forceUpdate();
     },
-    goTick() {
-      this.$router.push("/tick");
-    },
   },
 });
 </script>
 <style lang="less" scoped>
+.home::-webkit-scrollbar {
+  width: 0 !important;
+}
 .home {
   background: #f5f5f5;
   .dis {

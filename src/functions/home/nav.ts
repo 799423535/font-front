@@ -1,4 +1,12 @@
+import { useRouter } from "vue-router";
 export const fn = (reactive: any, ref: any): any => {
+    const router = useRouter();
+    const goTick = () => {
+        router.push("/tick");
+    };
+    const goShop = () => {
+        router.push("/shop");
+    }
     let arr = reactive([
         { title: "关注", component: "Attention" },
         { title: "推荐", component: "Recommend" },
@@ -25,6 +33,5 @@ export const fn = (reactive: any, ref: any): any => {
         show.value = true;
     };
 
-    
-    return { arr, active, show, showPopup }
+    return { arr, active, show, showPopup, goTick, goShop }
 }

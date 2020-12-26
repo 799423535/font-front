@@ -10,12 +10,14 @@ import { home } from "./home";
 import { tick } from "./tick";
 import { details } from "./details";
 import { exhibition } from "./exhibition";
+import { shop } from "./shop";
 export const store: any = createStore({
   modules: {
     home,
     tick,
     details,
-    exhibition
+    exhibition,
+    shop
   }
 })
 

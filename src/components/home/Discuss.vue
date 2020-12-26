@@ -25,7 +25,7 @@
             alt=""
           >
             <template v-slot:loading>
-              <van-loading type="spinner" />
+              <van-loading type="spinner" size="22px" />
             </template>
           </van-image>
         </div>
@@ -37,7 +37,11 @@
             width="110"
             height="103"
             alt=""
-          />
+          >
+            <template v-slot:loading>
+              <van-loading type="spinner" size="22px" />
+            </template>
+          </van-image>
           <van-image
             radius="5"
             lazy-load
@@ -45,7 +49,11 @@
             width="110"
             height="103"
             alt=""
-          />
+          >
+            <template v-slot:loading>
+              <van-loading type="spinner" size="22px" />
+            </template>
+          </van-image>
         </div>
       </div>
       <p class="title">{{ item.title }}</p>
