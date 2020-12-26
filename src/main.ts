@@ -33,7 +33,8 @@ import {
     Lazyload,
     PullRefresh,
     List,
-    Overlay
+    Overlay,
+    Pagination 
 } from 'vant';
 
 
