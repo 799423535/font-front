@@ -32,7 +32,8 @@ import {
     Calendar,
     Lazyload,
     PullRefresh,
-    List
+    List,
+    Overlay
 } from 'vant';
 
 
@@ -93,3 +94,8 @@ app.use(Search);
 app.use(Calendar);
 app.use(ShareSheet);
 app.mount('#app');
+
+// 下拉刷新
+app.use(PullRefresh);
+// 遮罩层
+app.use(Overlay);
