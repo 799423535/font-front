@@ -11,16 +11,41 @@
             <img src="./../../assets/img/home/guanzhu.png" alt="" />
             关注
           </div>
-          <div class="rad"><span>...</span></div>
+          <img src="./../../assets/img/home/liebiao.png" alt="" />
         </div>
       </div>
       <div class="main">
         <div class="left">
-          <img :src="item.main" alt="" />
+          <van-image
+            :src="item.main"
+            width="210"
+            height="210"
+            lazy-load
+            radius="5"
+            alt=""
+          >
+            <template v-slot:loading>
+              <van-loading type="spinner" />
+            </template>
+          </van-image>
         </div>
         <div class="right">
-          <img :src="item.rightimg1" alt="" />
-          <img :src="item.rightimg2" alt="" />
+          <van-image
+            radius="5"
+            lazy-load
+            :src="item.rightimg1"
+            width="110"
+            height="103"
+            alt=""
+          />
+          <van-image
+            radius="5"
+            lazy-load
+            :src="item.rightimg2"
+            width="110"
+            height="103"
+            alt=""
+          />
         </div>
       </div>
       <p class="title">{{ item.title }}</p>
@@ -44,16 +69,18 @@
     </div>
     <div class="user">
       <p class="title">你可能感兴趣的用户</p>
-      <ul class="user-item">
-        <li v-for="(item, i) in userList" :key="i">
-          <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="">
-          <img :src="item.img" alt="" />
-          <p class="ft">{{ item.title }}</p>
-          <p class="ft">{{ item.subtitle }}</p>
-          <p class="ft">{{item.count}} 笔记</p>
-          <div class="att">+ 关注</div>
-        </li>
-      </ul>
+      <div class="ut">
+        <ul class="user-item">
+          <li v-for="(item, i) in userList" :key="i">
+            <img class="cls" src="./../../assets/img/home/quxiao02.png" alt="" />
+            <img :src="item.img" alt="" />
+            <p class="ft">{{ item.title }}</p>
+            <p class="ft">{{ item.subtitle }}</p>
+            <p class="ft">{{ item.count }} 笔记</p>
+            <div class="att">+ 关注</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -61,6 +88,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useStore } from "./../../store/index";
+import BetterScroll from "better-scroll";
 export default defineComponent({
   setup() {
     const store = useStore();
@@ -84,7 +112,7 @@ export default defineComponent({
   methods: {},
 });
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .dis .single {
   height: 376px;
   width: 100%;
@@ -126,6 +154,7 @@ export default defineComponent({
       }
       .rad {
         font-size: 20px;
+        background: white;
       }
     }
   }
@@ -140,17 +169,17 @@ export default defineComponent({
     img {
       width: 210px;
       height: 210px;
+      border-radius: 5px;
     }
   }
   .right {
     width: 110px;
-    img {
-      width: 126px;
-      height: 103px;
+    .van-image {
+      margin: 0;
       display: block;
     }
-    img:nth-child(2) {
-      margin-top: 6px;
+    .van-image:nth-child(2) {
+      margin-top: 4px;
     }
   }
 }
@@ -212,50 +241,52 @@ export default defineComponent({
     font-size: 12px;
     padding: 10px 0;
   }
-  .user-item {
-    width: 100%;
-    display: flex;
+  .ut {
     overflow: auto;
-    li {
-      flex-shrink: 0;
-      width: 150px;
-      height: 280px;
-      text-align: center;
-      border: 1px solid #eee;
-      margin: 0 3px;
-      position: relative;
-      border-radius: 5px;
-      img {
-        margin-top: 12px;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-      }
-      .cls{
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 22px;
-        height: 22px;
-        margin: 0;
-      }
-      .att{
-        width: 115px;
-        height: 24px;
-        line-height: 24px;
-        border:1px solid #6DACEB;
-        font-size: 12px;
-        color: #6DACEB;
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        right: 0;
-        margin: auto;
+    width: 100%;
+    .user-item {
+      display: inline-flex;
+      li {
+        flex-shrink: 0;
+        width: 150px;
+        height: 280px;
+        text-align: center;
+        border: 1px solid #eee;
+        margin: 0 3px;
+        position: relative;
+        border-radius: 5px;
+        img {
+          margin-top: 12px;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+        }
+        .cls {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 22px;
+          height: 22px;
+          margin: 0;
+        }
+        .att {
+          width: 115px;
+          height: 24px;
+          line-height: 24px;
+          border: 1px solid #6daceb;
+          font-size: 12px;
+          color: #6daceb;
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
       }
     }
   }
 }
-.dis .ft{
+.dis .ft {
   font-size: 14px;
   margin-top: 15px;
 }

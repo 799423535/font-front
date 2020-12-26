@@ -3,11 +3,7 @@
     <div class="head">
       <div class="top">
         <img src="/@/assets/img/home/icon.png" alt="" />
-        <input
-          type="text"
-          class="ipt"
-          placeholder="搜索用户、展览、作品、艺术家和机构"
-        />
+        <input type="text" class="ipt" placeholder="搜索用户、展览、作品、艺术家和机构" />
         <img src="/@/assets/img/home/btn02.png" alt="" />
       </div>
       <ul class="bot">
@@ -40,18 +36,15 @@
         @click="handlerClick"
         color="#3388DE"
         line-width="30"
-        :sticky="true"
+        sticky
+        animate
         v-model:active="active"
       >
         <div class="ims">
           <van-cell is-link @click="showPopup">
             <img src="/@/assets/img/home/xiangxiajiantou.png" alt="" />
           </van-cell>
-          <van-popup
-            v-model:show="show"
-            position="top"
-            :style="{ height: '25%' }"
-          >
+          <van-popup v-model:show="show" position="top" :style="{ height: '25%' }">
             <p class="title">全部分类</p>
             <ul class="boxul">
               <li v-for="(item, i) in arr" @click="handlerClick(i)" :key="i">
@@ -62,9 +55,10 @@
         </div>
 
         <van-tab :title="item.title" v-for="(item, i) in arr" :key="i">
-           <component :is="item.component"></component>
+          <keep-alive>
+            <component :is="item.component"></component>
+          </keep-alive>
         </van-tab>
-        
       </van-tabs>
     </nav>
   </div>
@@ -104,9 +98,12 @@ export default defineComponent({
   },
 });
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .home {
   background: #f5f5f5;
+  .dis {
+    background: #f5f5f5;
+  }
 }
 .home .head {
   width: 100%;
@@ -175,6 +172,7 @@ export default defineComponent({
     }
   }
 }
+
 .home .ims .title {
   text-align: center;
   padding-top: 10px;

@@ -3,7 +3,6 @@ export const mutations: any = {
         store.intorList = payload;
     },
     getUser(store: any, payload: any): void {
-        console.log(payload);
         store.userList = payload;
     }
 }

@@ -37,7 +37,19 @@ const routes: any = [
       }
     ]
   },
-  {  //分类看展
+  { //附近展览
+    path:"/nearbyshow",
+    component: () => import('../view/exhibition/NearbyShow.vue')
+  },
+  { //热门展览
+    path:"/hotshow",
+    component: () => import('../view/exhibition/HotShow.vue')
+  },
+  { //日历行程
+    path:"/calendar",
+    component: () => import('../view/exhibition/Calendar.vue')
+  },
+  {  //分类看展alendar
     path:"/classifyshow",
     component: () => import('../view/exhibition/Classifyshow.vue')
   },

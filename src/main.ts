@@ -29,7 +29,11 @@ import {
     ShareSheet,
     DropdownMenu,
     DropdownItem,
-    Pagination
+    Calendar,
+    Lazyload,
+    PullRefresh,
+    List,
+    Overlay
 } from 'vant';
 
 
@@ -59,8 +63,13 @@ app.use(Popup);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(VanImage);
-app.use(ActionSheet)
-app.use(Stepper)
+app.use(ActionSheet);
+app.use(Stepper);
+app.use(ShareSheet);
+app.use(Lazyload);
+app.use(PullRefresh);
+app.use(List);
+ 
 //我的
 app.use(NavBar);
 app.use(Icon);
@@ -81,6 +90,12 @@ app.use(Icon);
 app.use(Swipe);
 app.use(SwipeItem);
 app.use(Search);
+app.use(Calendar);
 app.use(ShareSheet);
 app.use(Pagination);
 app.mount('#app');
+
+// 下拉刷新
+app.use(PullRefresh);
+// 遮罩层
+app.use(Overlay);

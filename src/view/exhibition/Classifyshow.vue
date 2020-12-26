@@ -3,37 +3,23 @@
       <div class="header">
         <van-nav-bar
         title="分类看展"
+
         left-arrow
         @click-left="onClickLeft"
         @click-right="onClickRight"
       />
-      <!-- 下拉框 -->
+
+
+     </div>
+              <!-- 下拉框 -->
       <van-dropdown-menu active-color="#1989fa">
         <van-dropdown-item v-model="value" :options="option" />
-   
-        <!-- <van-dropdown-item title="正在进行" ref="item">
-          <van-cell center title="即将开始">
-            <template #right-icon>
-              <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
-            </template>
-          </van-cell>
-          <van-cell center title="已结束">
-            <template #right-icon>
-              <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
-            </template>
-          </van-cell>
-                <van-cell center title="全部">
-            <template #right-icon>
-              <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
-            </template>
-          </van-cell>
-        </van-dropdown-item> -->
-
          <van-dropdown-item v-model="value1" :options="option1" />
         <van-dropdown-item v-model="value2" :options="option2" />
       </van-dropdown-menu>
 
-   </div>
+
+
 
       <!-- 附近展览--主要内容模块 -->
     <div class="nearby">
@@ -122,11 +108,17 @@ export default {
   width: 100%;
   position: fixed;
   background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .van-dropdown-menu{
    border-bottom: 1px solid #dedede;
    border-top: 1px solid #dedede;
+   position: absolute;
+   top: 45px;
+   left: 0;
+   width: 100%;
 }
 
 .nearby{

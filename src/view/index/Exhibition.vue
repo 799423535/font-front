@@ -1,17 +1,24 @@
 <template>
   <div class="exhibition">
 
-    <div class="nav-bar">
-      <span >兴趣分类</span>
-      <div>
-        <span @click="exhibitionCity" class="title">{{city.name}}
-          <!-- <img src="../../assets/exhibitionimg/banner1xialakuang.png" alt=""> -->
-        </span>
-        <span>全球</span>
+    <div class="nav-box">
+      <div class="nav-bar">
+        <span >兴趣分类</span>
+        
+        <div class="box-title">
+           <div class="tocities">
+          <span @click="exhibitionCity" class="title">{{city.name}}
+          
+          </span>
+           <van-image :src="xialakuang" />
+         </div>
+          <span>全球</span>
+         </div>
+  
+        <van-icon name="search" @click="exhibitionSearch"/>
       </div>
- 
-      <van-icon name="search" @click="exhibitionSearch"/>
     </div>
+
 
     <!-- 轮播图 -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -30,16 +37,16 @@
     <van-image :src="icon01" />
     <span class="icon-txt">分类看展</span>
   </van-grid-item>
-  <van-grid-item>
+  <van-grid-item @click="tohotshow">
     <van-image :src="icon02" />
     <span class="icon-txt">热门展览</span>
   </van-grid-item>
-  <van-grid-item>
+  <van-grid-item  @click="tocalendar">
     <van-image :src="icon03" />
     <span class="icon-txt">日历行程</span>
   </van-grid-item>
    <van-grid-item>
-    <van-image :src="icon04" />
+    <van-image :src="icon04" @click="tonearbyshow" />
     <span class="icon-txt">附近/签到</span>
   </van-grid-item>
 </van-grid>
@@ -60,7 +67,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> 
 
 
  <!-- 正在热展模块 -->
@@ -123,17 +130,8 @@
 <!-- 附近展览--主要内容模块 -->
     <div class="nearby">
       <van-cell title="附近展览" is-link value="查看更多" /> 
-      <!-- 遍历展览内容 -->
-      <div class="nearby-m">
-        <div class="nearby-main" v-for="item in list" @click="todetail(item._id)">
-            <img :src="item.img" alt="">
-            <div class="nearby-right">
-              <h5>{{item.title}}</h5>
-              <p>{{item.interspace}}</p>
-              <span>正在进行</span>
-            </div>
-        </div>
-      </div>
+      <!-- 遍历展览内容  引用组件 -->
+      <show></show>
     </div>
   </div>
 </template>
@@ -144,21 +142,27 @@ import icon01 from "../../assets/exhibitionimg/icon01.png";
 import icon02 from "../../assets/exhibitionimg/icon02.png";
 import icon03 from "../../assets/exhibitionimg/icon03.png";
 import icon04 from "../../assets/exhibitionimg/icon04.png";
+import xialakuang from "../../assets/exhibitionimg/xialakuang.png";
 import {getTickets} from "../../utils/api";
 import { store } from '../../store/index';
+import show from '../../components/exhibition/show.vue';
+
 
 export default {
   data() {
     return {
-      list:{},
+       list:{},
       icon01:icon01,
       icon02:icon02,
       icon03:icon03,
-      icon04:icon04
+      icon04:icon04,
+      xialakuang:xialakuang,
     };
   },
 
-  components: {},
+  components: {
+    show
+  },
 
   computed: {
     city(){
@@ -166,9 +170,8 @@ export default {
     }
   },
 
-  mounted() {
+  mounted() {   
     this.getList();
-    
   },
 
   methods: {
@@ -185,27 +188,46 @@ export default {
     toclassifyshow(){
        this.$router.push("/classifyshow");
     },
-    
-
-    //获取数据
-     async getList(){
-        const res = await getTickets();
-        this.list = res.results;
-        console.log(res.results);
+    //跳转到日历行程
+    tocalendar(){
+      this.$router.push("/calendar");
     },
+    //跳转到热门展览
+    tohotshow(){
+       this.$router.push("/hotshow");
+    },
+    //跳转到附近展览页
+    tonearbyshow(){
+      this.$router.push("/nearbyshow");
+    },
+  
 
     //点击展览，到详情页
     todetail(id){
       this.$router.push("/tickDetils/"+id);
-      
-    }
+    },
+            //获取数据
+     async getList(){
+        const res = await getTickets();
+        this.list = res.results;
+        console.log(res.results);
+     }
   }
 };
 </script>
 <style lang='less' scoped>
+.nav-box{
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background: #fff;
+  top: 0;
+  left: 0;
+}
 .nav-bar{
   display: flex;
   justify-content: space-between;
+  // align-items: center;
   font-size: 18px;
   height: 50px;
   line-height: 50px;
@@ -221,18 +243,28 @@ export default {
     padding: 10px 0 10px 0; 
   color:#222222;
   }
+  .box-title{
+    display: flex;
+    align-self: center;
+  }
+  .tocities{
+      display: flex;
+    align-self: center;
+    margin-right: 10px;
+  }
   .title{
      color:#222222;
     font-weight: 550;
-    margin-right: 8px;
-    img{
-      width: 20px;
-      height: 20px;
+
+    .van-image{
+      width: 15px;
+      height: 15px;
     }
   }
 }
 
 .my-swipe{
+  margin-top: 50px;
 .van-swipe-item {
     color: #fff;
     font-size: 20px;
@@ -268,8 +300,11 @@ export default {
         padding: 0 10px;
         li{
           flex-shrink: 1;
-          height: 100%;
+          height:100%;
           padding: 0 5px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
           img{
             width: 100px;
             height:138px;
@@ -281,6 +316,7 @@ export default {
             -webkit-box-orient: vertical;    
             -webkit-line-clamp: 2;    
             overflow: hidden;
+            height: 27px;
           }
           span{
             color: #FF4A40;

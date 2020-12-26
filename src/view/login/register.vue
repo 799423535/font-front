@@ -1,11 +1,11 @@
-<template>
-<div class="rregister">
+<template >
+<div class="email">
     <van-nav-bar
     title="机构注册"
     left-arrow
     @click-left="gotologin"
    />
-  <div class="register">
+  <div class="register1">
      <van-field v-model="form.username" placeholder="手机/电子邮箱" class="login-btn frame" />
      <div style="display:flex">
        <van-field
@@ -13,8 +13,8 @@
     placeholder="请输入密码"
     class="frame cor"
  />
-     <van-button  type="primary" @click="btnlogin">确认密码</van-button>
-
+     <van-button  type="primary" style="margin-top:27px" @click="btnlogin">确认密码</van-button>
+     
      </div>
     
 
@@ -80,6 +80,10 @@ export default {
   };
 
 </script>
+<<<<<<< HEAD
 <style lang='less' scoped>
 
 </style>
+=======
+<style lang='less' scoped></style>
+>>>>>>> 0786c4c11c9d7ffafe8e2d648c29a83db453cee6

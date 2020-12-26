@@ -38,7 +38,7 @@ export default {
   methods: {},
 };
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .rec .my-swipe .van-swipe-item {
   color: #fff;
   font-size: 20px;
@@ -48,5 +48,4 @@ export default {
     height: 160px;
   }
 }
-
 </style>
