@@ -33,7 +33,8 @@ import {
     Lazyload,
     PullRefresh,
     List,
-    Overlay
+    Overlay,
+    Pagination 
 } from 'vant';
 
 
@@ -93,6 +94,7 @@ app.use(SwipeItem);
 app.use(Search);
 app.use(Calendar);
 app.use(ShareSheet);
+app.use(Pagination);
 app.mount('#app');
 
 // 下拉刷新
