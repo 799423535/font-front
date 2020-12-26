@@ -23,7 +23,11 @@
             lazy-load
             radius="5"
             alt=""
-          />
+          >
+            <template v-slot:loading>
+              <van-loading type="spinner" />
+            </template>
+          </van-image>
         </div>
         <div class="right">
           <van-image
