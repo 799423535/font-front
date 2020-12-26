@@ -13,7 +13,7 @@
     placeholder="请输入密码"
     class="frame cor"
  />
-     <van-button  type="primary" style="margin-top:27px" @click="btnlogin">确认密码</van-button>
+     <van-button  type="primary"  @click="btnlogin">确认密码</van-button>
      
      </div>
     
@@ -63,27 +63,36 @@ export default {
   methods: {
     //后退
     gotologin(){
-      this.$router.push("/login/login")
+      this.$router.push("/login/login");
     },
     //点击按钮，验证
   async  btnlogin(){
         const res =await getaddUserApi({username:this.form.username,password:this.form.password});
          if(res.state==0){
          localStorage.setItem('token',res.token);
-         this.$router.replace("/login/login")
+         this.$router.replace("/login/login");
          }else{
           Toast(res.msg);
         }
         console.log(res);
-    },   
+     },   
     }
   };
 
 </script>
-<<<<<<< HEAD
 <style lang='less' scoped>
+.serve{
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 28px;
+}
+.register1 {
+    width: 80%;
+    margin: auto;
+  }
 
+  .cor {
+    width: 185px;
+
+  }
 </style>
-=======
-<style lang='less' scoped></style>
->>>>>>> 0786c4c11c9d7ffafe8e2d648c29a83db453cee6

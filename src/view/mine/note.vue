@@ -1,4 +1,4 @@
-<template>
+<template >
    <div class="note">
      <div style="background:#fff;height:210px;margin-bottom:20px">
        <div class="note-bg">
@@ -70,8 +70,8 @@ export default {
       this.$router.push("/index/mine/"+this.id)
     },
     //获取个人详情信息
-    async getdetails(){
-      const res = await getdetailsApi({_id:this.id});
+      async getdetails(){
+      const res = await getdetailsApi( {_id:localStorage.getItem('token')});
       this.list = res.results;
       console.log(res.results);
     }

@@ -1,6 +1,7 @@
 <template>
   <div class="mine">
     <!-- 标题 -->
+  
     <div id="mine-title">
       <van-nav-bar :class="mine-title"   fixed  title="我"
       right-text="设置"
@@ -17,12 +18,15 @@
         <div class="portraits">
           <div class="portraits-top">
             <div class="portraits-ico" @click="gotoNote">
-              <img  src="./../../assets/slices/mineslices/head_img.png" alt="" class="headimg">
+              <img v-if="judge" src="./../../assets/slices/mineslices/head_img.png" alt="" class="headimg" >
+              <img v-else src="./../../assets/slices/loginslices/touxiang.png" alt="" class="headimg" >
             </div>
              <div class="portraits-name">
-              <span >{{detailData.username}}</span>
+              
+              <span v-if="judge">{{detailData.username}}</span>
+              <span v-else style="margin-left:-80px">未登录</span>
                <br>
-              <span style="color:#909090 ;font-size:12px">在艺号  28796505 <span class="arro"> ></span> </span>
+              <span  v-if="judge" style="color:#909090 ;font-size:12px" >在艺号  28796505 <span class="arro"> ></span> </span>
             </div>
              
              <div class="mine-headercenter member">
@@ -34,19 +38,24 @@
             <ul class="portraits-list">
               <li>
               <div>
-                <span class="ptop"> {{detailData.attention}} </span>
+               
+                <span class="ptop" v-if="judge" style="margin-top:5px"> {{detailData.attention}} </span>
+                 <span class="ptop" v-else> 0 </span>
                   <br>
                 <span>关注</span>
               </div>
                   
               </li>
                <li>
-                   <span class="ptop">{{detailData.fans}}</span>
+                 <span class="ptop" v-if="judge" style="margin-top:5px">{{detailData.fans}}</span>
+                  <span class="ptop"  v-else> 0 </span>
+                   
                    <br>
                   <span>粉丝</span>
               </li>
               <li>
-                  <span class="ptop">{{detailData.jifen}}</span>
+                 <span class="ptop" v-if="judge" style="margin-top:5px">{{detailData.jifen}}</span>
+                 <span class="ptop"  v-else> 0 </span>  
                   <br>
                   <span>积分</span>
               </li>
@@ -169,6 +178,7 @@
     <!-- <van-cell title="申请认证" is-link /> -->
    </van-cell-group>
    </div>
+  
   </div>
 </template>
 
@@ -237,27 +247,46 @@ data(){
     a7:a7,
     a8:a8,
     detailData:{},
-    
-  }
+   
+  
+};
 },
 
   components: {},
 
-  computed: {},
+  computed: {
+     judge (){
+       if(localStorage.getItem('token')){
+        return true;
+       }else{
+        return false;
+       }
+     },
+  },
 
   mounted() {
-    this.getdetails();
+    console.log(this.judge);
+    const token=localStorage.getItem('token');
+    if(token){
+      this.getdetails();  
+    }
   },
 
   methods: {
     async  getdetails(){
-      const res = await getdetailsApi( {_id:this.id});
+      const res = await getdetailsApi( {_id:localStorage.getItem('token')});
         this.detailData = res.results;
-       
+        console.log(this.detailData);
     },
      
     gotoNote(){
-      this.$router.push("/mine/note/"+this.id);
+       console.log(this.detailData._id);
+      if(this.detailData._id){
+        this.$router.push("/mine/note/"+this.id);
+      }else{
+        this.$router.push("/login/login");
+      }
+      
     },
     gotoSet(){
       this.$router.push("/set/set/"+this.id);
@@ -312,6 +341,7 @@ data(){
    }
  }
  .portraits-list{
+   font-size: 14px;
    height: 65px;
   //  background: blue;
    display: flex;
@@ -334,6 +364,8 @@ data(){
 }
 
 
-
+.member-center{
+font-size: 12px;
+}
 
 </style>

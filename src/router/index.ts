@@ -25,7 +25,8 @@ const routes: any = [
           },
           {
             path: '/index/mine',
-            redirect: '/login/login',
+            component: () => import('./../view/index/Mine.vue'),
+            meta: {requireAuth:true}
           },
           {
             path: '/index/mine/:id',
@@ -77,6 +78,7 @@ const routes: any = [
     //登录
     path: '/login/login',
     component: () => import('./../view/login/login.vue'),
+
   },
   {
     //注册
@@ -115,4 +117,21 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
+// //登录页 需要判断是否需要登录是否去,根据路由元信息验证权限
+// router.beforeEach((to,from,next) => {
+//   console.log(111);
+//   //路径元信息是否有授权
+//    console.log(to.meta.requireAuth);
+//    if(to.meta.requireAuth) {//是否需要登录权限
+//     console.log(222)
+//      //判断是否有token，token是在本地存储的存储的
+//      if(!localStorage.getItem("token")) {
+//         next("/login/login");
+//      }else{
+//        next();
+//      }
+//    } else {
+//      next();
+//    };
+//   });
 export default router;

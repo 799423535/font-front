@@ -4,7 +4,7 @@
 
      <div class="top">
            <div class="top-right">
-             <img src="../../assets/slices/mineslices/sanjiao1.png" alt="">
+             <img src="../../assets/slices/mineslices/sanjiao1.png" alt="" @click="gto">
            </div>
            <div class="top-search">
                <input type="text" :placeholder="icon" class="iconfont">
@@ -13,19 +13,40 @@
           
        </div>   
     
-       
-      </div>
+   <span class="standard-title">*A-Z字母索引，滑动查看更多</span>
+      
+ <van-tabs class="tabs-index">
+  <van-tab v-for="index in 8" :title="'推荐 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+
+ 
+      
     
     </div>
 
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
+ 
+   setup() {
+    const active = ref(2);
+    return { active };
+  },
+
    data(){
            return {               
                icon:'\ue634 作品名称、画面内容、题跋释文'
-           }
+     };
+  
+  },
+  methods:{
+    gto(){
+      this.$router.go(-1);
+    }
   }
 }
 </script>
@@ -72,5 +93,16 @@ export default {
       text-indent: 5px;
     }
  }
- 
+ .standard-title{
+   display: block;
+   font-size: 12px;
+   line-height: 40px;
+   color: #a7a7a7;
+   width: 100%;
+   text-align: center;
+ }
+ .tabs-index{
+   width: 80%;
+ }
+
 </style>

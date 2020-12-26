@@ -63,7 +63,6 @@ export default {
       number: '',
       password: '',
     });
-  
     return { state,active };
   },
   data(){
@@ -74,21 +73,24 @@ export default {
       }
     }
   },
+  mounted(){
+   
+  },
     methods: {
     gotoregister(){
-        this.$router.push("/login/register");
+      this.$router.push("/login/register");
     },
     goback(){
       this.$router.push("/index/home");
     },
     async sendLogin(){
-      const res = await  getUsersApi({username:this.form.username,password:this.form.password});
+      const res = await  getUsersApi({
+        username:this.form.username,
+        password:this.form.password
+        });
       if(res.status==0){
          localStorage.setItem('token',res.token);
-         
-         this.$router.go(-1);
-      }else{
-         Toast(res.msg);
+         this.$router.replace("/index/mine/"+res.token);
       }
     
     },   
@@ -96,50 +98,4 @@ export default {
   }
 };
 </script>
-<<<<<<< HEAD
-<style lang='less' scoped>
-.login{
-  width: 80%;
-  margin: auto;
-
-}
-
-.frame{
-    background-color: #fff;
-    border-radius: 4px;
-    border: 1px solid #dcdfe6;
-    margin-bottom: 18px;
-}
-
-
-.line-left{
-  margin-top: 50px;
-  width: 128px;
-  height: 3px;
-  background: linear-gradient(90deg, #F6F6F6 0%, #777777 100%);
-}
-.line-right{
-  margin-top: 50px;
-  width: 128px;
-  height: 3px;
-  background: linear-gradient(90deg, #777777 0%, #F6F6F6 100%);
-}
-.other-line{
-  display: flex;
-  justify-content: space-around;
-}
-.other-img{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-.logo{
-  margin: auto;
-  display: block;
-  transform: scale(0.5);
-}
-</style>
-=======
 <style lang='less' scoped></style>
->>>>>>> 0786c4c11c9d7ffafe8e2d648c29a83db453cee6
