@@ -65,7 +65,7 @@ export default defineComponent({
   background: #f5f5f5;
   .banner {
     height: 125px;
-    background: url(/@/assets/img/product/bg.png);
+    background: url("./../../assets/img/product/bg.png");
     padding: 0 20px;
     overflow: hidden;
     p {
