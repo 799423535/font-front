@@ -1,11 +1,6 @@
 <template>
   <div class="vue-water-easy" ref="waterWrap">
-    <div
-      v-for="(items, clos) in list"
-      :key="clos"
-      :style="waterStyle"
-      class="colsW"
-    >
+    <div v-for="(items, clos) in list" :key="clos" :style="waterStyle" class="colsW">
       <ul>
         <li
           v-for="(item, index) in items"
@@ -64,6 +59,7 @@ export default {
   },
   data() {
     let list = this.initData();
+    let img = "/@/assets/logo.png";
     return {
       list: list,
     };
