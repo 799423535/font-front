@@ -103,3 +103,6 @@
   font-size: 14px;
   font-weight: 600;
 }
+.mine .van-grid-item {
+  border-top: 1px solid #dedede;
+}

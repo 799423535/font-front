@@ -92,33 +92,32 @@
 
    <div class="share gap" style="background:#fff" >
    <div class="minetitle">分享与发现</div>
-   <hr  class="q1">
     <van-grid  :column-num="4"  :border="false" >
-   <van-grid-item text="笔记">
+   <van-grid-item text="笔记"   class="q1">
    <van-image :src="img1" />
-   <span class="spansize" @click="gotomynote">笔记</span>
+   <span class="spansize " @click="gotomynote" >笔记</span>
    </van-grid-item>
-  <van-grid-item text="提问">
+  <van-grid-item text="提问"  class="q1">
    <van-image :src="img2"  />
    <span class="spansize">提问</span>
   </van-grid-item>
-    <van-grid-item text="作品">
+    <van-grid-item text="作品"  class="q1">
    <van-image :src="img3"  />
-   <span class="spansize">作品</span>
+   <span class="spansize" >作品</span>
   </van-grid-item>
-    <van-grid-item text="直播">
+    <van-grid-item text="直播"  class="q1">
    <van-image :src="img4"  />
    <span class="spansize">直播</span>
   </van-grid-item>
-   <van-grid-item text="话题">
+   <van-grid-item text="话题" style="border-top:none">
    <van-image :src="img5"  />
    <span class="spansize">话题</span>
   </van-grid-item> 
-   <van-grid-item text="订阅">
+   <van-grid-item text="订阅" style="border-top:none">
    <van-image :src="img6"  />
    <span class="spansize">订阅</span>
    </van-grid-item>
-    <van-grid-item text="草稿箱">
+    <van-grid-item text="草稿箱" style="border-top:none">
    <van-image :src="img7"  />
    <span class="spansize">草稿箱</span>
   </van-grid-item>
@@ -127,10 +126,9 @@
    
    <div class="tools gap">
       <div class="minetitle">必备工具</div>
-      <hr class="q1">
-  <van-grid  :column-num="4">
-    <van-grid-item>
-   <van-image :src="a1" />
+  <van-grid  :column-num="4" :border="false" >
+    <van-grid-item   class="q1"> 
+   <van-image :src="a1"   />
    <span class="spansize">收藏夹</span>
    </van-grid-item>
    <van-grid-item>
@@ -145,28 +143,28 @@
     <van-image :src="a4" />
    <span class="spansize">印款查询</span>
     </van-grid-item>
-    <van-grid-item>
+    <van-grid-item style="border:none" >
     <van-image :src="a5" />
-   <span class="spansize">展览记录</span>
+   <span class="spansize" >展览记录</span>
     </van-grid-item>
-     <van-grid-item>
-   <van-image :src="a6" />
+     <van-grid-item  style="border:none">
+   <van-image :src="a6"  />
    <span class="spansize">成交记录</span>
     </van-grid-item>
-   <van-grid-item>
+   <van-grid-item style="border:none" >
    <van-image :src="a7" />
-   <span class="spansize">申请上线展</span>
+   <span class="spansize" >申请上线展</span>
     </van-grid-item>
-   <van-grid-item>
+   <van-grid-item style="border:none" >
    <van-image :src="a8" />
-   <span class="spansize">评选/赛事</span>
+   <span class="spansize" >评选/赛事</span>
     </van-grid-item>
  </van-grid>
    </div>
 
    <div class="help gap">
      <div class="minetitle">帮助和反馈</div>
-      <hr class="q1">
+    
    <van-cell-group>
     <van-cell title="意见反馈" is-link  />
     <van-cell title="分享在艺" is-link  @click="showShare = true"  />
@@ -175,7 +173,7 @@
     @select="onSelect"
   />
     <van-cell title="申请认证" is-link />
-    <!-- <van-cell title="申请认证" is-link /> -->
+
    </van-cell-group>
    </div>
   
@@ -379,8 +377,5 @@ font-size: 12px;
 }
 .order-p{
   width: 100px;
-}
-.q1{
-  background:#dedede;
 }
 </style>
