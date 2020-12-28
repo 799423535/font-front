@@ -33,25 +33,84 @@
         </div>
       </div>
     </div>
-    <div class="likes">
+    <div class="likes sc1">
       <p>大家都喜欢 <img src="/@/assets/img/product/jiantou2.png" alt="" /></p>
-      <div class="main"></div>
+      <div class="main">
+        <ul>
+          <li v-for="(item, i) in results.likes1">
+            <img :src="item.img" alt="" />
+            <p>{{ item.title }}</p>
+            <p>{{ item.count }}积分</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="likes sc2">
+      <p>大家都喜欢 <img src="/@/assets/img/product/jiantou2.png" alt="" /></p>
+      <div class="main">
+        <ul>
+          <li v-for="(item, i) in results.likes2">
+            <img :src="item.img" alt="" />
+            <p>{{ item.title }}</p>
+            <p>{{ item.count }}积分</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="list">
+      <p class="title">热门商品<img src="/@/assets/img/product/jiantou2.png" alt="" /></p>
+      <van-list
+        v-model:loading="loading"
+        :finished="finished"
+        finished-text="没有更多了"
+        @load="getList"
+        offset="1"
+      >
+        <ul>
+          <li v-for="(item, i) in list" :key="i">
+            <img :src="item.hot[0].img" alt="" />
+            <p>{{ item.hot[0].title }}</p>
+            <p>{{ item.hot[0].count }}积分</p>
+          </li>
+        </ul>
+      </van-list>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
+import { fn } from "/@/functions/shop/shop";
+import BetterScroll from "better-scroll";
 export default defineComponent({
   setup() {
-    return {};
+    const { getShop, results, getList, list, loading, finished } = fn();
+    getShop();
+    return { getShop, results, getList, list, loading, finished };
+  },
+
+  distoryed() {
+    store.commit("shop/clear");
   },
 
   components: {},
 
   computed: {},
 
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      new BetterScroll(".sc1 .main", {
+        click: true,
+        scrollX: true,
+        scrollY: false,
+      });
+      new BetterScroll(".sc2 .main", {
+        click: true,
+        scrollX: true,
+        scrollY: false,
+      });
+    });
+  },
 
   methods: {},
 });
@@ -173,7 +232,8 @@ export default defineComponent({
     padding: 0 20px;
     margin-top: 10px;
     background: #fff;
-    p {
+    padding-bottom: 10px;
+    > p {
       height: 46px;
       display: flex;
       align-items: center;
@@ -183,6 +243,80 @@ export default defineComponent({
       font-weight: 700;
     }
     .main {
+      width: 100%;
+      overflow: hidden;
+      ul {
+        display: inline-flex;
+        li {
+          margin-right: 10px;
+          img {
+            height: 86px;
+            width: 86px;
+          }
+          p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-size: 14px;
+            color: #444444;
+            margin-top: 8px;
+          }
+          p:nth-child(3) {
+            color: #ff343b;
+          }
+        }
+      }
+    }
+  }
+  .list {
+    margin-top: 10px;
+    background: #fff;
+    padding: 0 20px;
+    text-align: center;
+    .title {
+      height: 50px;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ul {
+      overflow: hidden;
+      li {
+        margin-top: 10px;
+        float: left;
+        width: 160px;
+        border: 1px solid #eee;
+        &:nth-child(even) {
+          margin-left: 10px;
+        }
+        img {
+          width: 160px;
+          height: 160px;
+        }
+        p {
+          padding-top: 10px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          font-size: 14px;
+          color: #444444;
+          margin-top: 8px;
+          padding: 0 5px;
+          text-align: left;
+        }
+
+        p:nth-child(3) {
+          color: #ff343b;
+          padding-bottom: 10px;
+        }
+      }
     }
   }
 }
