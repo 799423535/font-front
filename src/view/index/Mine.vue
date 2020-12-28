@@ -92,7 +92,7 @@
 
    <div class="share gap" style="background:#fff" >
    <div class="minetitle">分享与发现</div>
-   <hr>
+   <hr  class="q1">
     <van-grid  :column-num="4"  :border="false" >
    <van-grid-item text="笔记">
    <van-image :src="img1" />
@@ -127,7 +127,7 @@
    
    <div class="tools gap">
       <div class="minetitle">必备工具</div>
-      <hr>
+      <hr class="q1">
   <van-grid  :column-num="4">
     <van-grid-item>
    <van-image :src="a1" />
@@ -166,7 +166,7 @@
 
    <div class="help gap">
      <div class="minetitle">帮助和反馈</div>
-      <hr>
+      <hr class="q1">
    <van-cell-group>
     <van-cell title="意见反馈" is-link  />
     <van-cell title="分享在艺" is-link  @click="showShare = true"  />
@@ -379,5 +379,8 @@ font-size: 12px;
 }
 .order-p{
   width: 100px;
+}
+.q1{
+  background:#dedede;
 }
 </style>
