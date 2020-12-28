@@ -1,11 +1,12 @@
 <template>
+<div class="search">
     <!-- 头部搜索 -->
     <form action="/">
       <van-search
         v-model="value"
         show-action
         background="#f6f6f6"
-        placeholder="搜索"
+        placeholder="搜索 "
         @search="onSearch"
         @cancel="onCancel"
       />
@@ -26,13 +27,14 @@
         </div>
     </div>
 
-    <div>
+    <div class="list">
       <ul class="ullist">
         <li>婆娑之境</li>
         <li>永恒的丝线</li>
         <li>相遇在此</li>
       </ul>
     </div>
+</div>
 </template>
 
 <script>
@@ -55,18 +57,26 @@ export default {
 };
 </script>
 <style lang='lass' scoped>
-.van-field__control{
-  background-color: white !important;
-  
+
+.search{
+  background: #f5f5f5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
 }
+
+
+
 .van-search__action{
-  color: #3388DE !important;
+  color: #3388DE ;
 }
   .nearby{
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
-    padding: 8px;
+    padding: 10px;
     background: #ffffff;
     height: 40px;
     width: 100%;

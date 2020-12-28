@@ -40,6 +40,8 @@ import {
 import 'amfe-flexible';
 import '/@/assets/styles/reset.less';
 import '/@/assets/styles/exhibition/exhibition.less';
+import '/@/assets/styles/exhibition/search.less';
+
 
 import 'vant/lib/index.css';
 import '/@/assets/styles/mine/mine.less';
