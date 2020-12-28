@@ -90,11 +90,7 @@
   margin-bottom: 8px;
 }
 .mine .xcgl {
-  transform: scale(0.3);
-}
-.mine .xcgl2 {
-  position: relative;
-  top: -20px;
+  width: 22px;
 }
 .mine .spansize {
   font-size: 8px;
