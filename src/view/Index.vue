@@ -5,11 +5,7 @@
     <van-tabbar :route="true" :fixed="true" :placeholder="true">
       <van-tabbar-item icon="home-o" to="/index/home">首页</van-tabbar-item>
       <van-tabbar-item icon="search" to="/index/exhibition">看展</van-tabbar-item>
-      <van-tabbar-item
-        icon="/@/assets/slices/mineslices/dibuyuan.png"
-        @click="show = true"
-        >图标</van-tabbar-item
-      >
+      <van-tabbar-item :icon="src" @click="show = true">图标</van-tabbar-item>
       <van-tabbar-item icon="manager" to="/index/course">课程</van-tabbar-item>
       <van-tabbar-item icon="home-o" to="/index/mine">我的</van-tabbar-item>
     </van-tabbar>
@@ -42,12 +38,13 @@
 </template>
 
 <script>
+import src from "./../assets/slices/mineslices/dibuyuan.png";
 import { defineComponent, reactive, ref } from "vue";
 export default defineComponent({
   setup() {
     const show = ref(false);
     const active = ref(0);
-    return { active, show };
+    return { active, show, src };
   },
 
   components: {},
