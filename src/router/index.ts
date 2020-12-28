@@ -38,6 +38,14 @@ const routes: any = [
       }
     ]
   },
+  {//兴趣页面
+    path:"/interest",
+    component: () => import('../view/exhibition/Interest.vue')
+  },
+  {//全球页面
+    path:"/global",
+    component: () => import('../view/exhibition/Global.vue')
+  },
   { //附近展览
     path: "/nearbyshow",
     component: () => import('../view/exhibition/NearbyShow.vue')

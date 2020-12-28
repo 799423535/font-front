@@ -11,7 +11,8 @@
      swipeable:true 
      swipe-threshold=4
      color = "#3388de"
-     title-active-color="#3388de">
+     title-active-color="#3388de"
+     >
       <van-tab title="展览" name="a">
         <show></show>
       </van-tab>

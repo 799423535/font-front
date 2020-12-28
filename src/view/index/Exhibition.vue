@@ -3,18 +3,19 @@
 
     <div class="nav-box">
       <div class="nav-bar">
-        <span >兴趣分类</span>
+        <span @click="tointerest">兴趣分类</span>
         
         <div class="box-title">
            <div class="tocities">
-          <span @click="exhibitionCity" class="title">{{city.name}}
+          <span @click="exhibitionCity" class="title">{{city.name}} </span>
           
-          </span>
            <van-image :src="xialakuang" />
          </div>
-          <span>全球</span>
+          <span @click="toglobal">全球</span>
          </div>
-  
+
+
+        
         <van-icon name="search" @click="exhibitionSearch"/>
       </div>
     </div>
@@ -56,7 +57,7 @@
  <!-- 看展购票模块 -->
   <div class="ticket">
     <!-- 购票头部 -->
-   <van-cell title="看展购票" is-link value="15场" /> 
+   <van-cell title="看展购票" is-link value="15场" @click="toclassifyshow"/> 
     <!-- 购票内容 -->
     <div class="box">
       <ul>
@@ -73,7 +74,7 @@
  <!-- 正在热展模块 -->
   <div class="ticket">
     <!-- 购票头部 -->
-   <van-cell title="正在热展" is-link value="256场" /> 
+   <van-cell title="正在热展" is-link value="256场" @click="toclassifyshow"/> 
     <!-- 购票内容 -->
     <div class="box">
       <ul>
@@ -91,7 +92,7 @@
  <!-- 即将开幕模块 -->
   <div class="ticket">
     <!-- 购票头部 -->
-   <van-cell title="即将开幕" is-link value="9场" /> 
+   <van-cell title="即将开幕" is-link value="9场"  @click="toclassifyshow"/> 
     <!-- 购票内容 -->
     <div class="box">
       <ul>
@@ -108,7 +109,7 @@
 
   <!-- 精彩活动模块 -->
   <div class="wonderful">
-    <van-cell title="精彩活动" is-link value="查看更多" />
+    <van-cell title="精彩活动" is-link value="查看更多" @click="tohotshow"/>
 
     <div class="wonderful-box">
       <div class="wonderful-self">
@@ -129,10 +130,14 @@
 
 <!-- 附近展览--主要内容模块 -->
     <div class="nearby">
-      <van-cell title="附近展览" is-link value="查看更多" /> 
+      <van-cell title="附近展览" is-link value="查看更多" @click="toclassifyshow"/> 
       <!-- 遍历展览内容  引用组件 -->
       <show></show>
     </div>
+
+
+
+
   </div>
 </template>
 
@@ -175,6 +180,12 @@ export default {
   },
 
   methods: {
+    //跳转到全球页面
+    toglobal(){
+      this.$router.push("/global")
+    },
+
+
    //跳转到搜索页面
     exhibitionSearch(){
       this.$router.push("/search")
@@ -211,10 +222,16 @@ export default {
         const res = await getTickets();
         this.list = res.results;
         console.log(res.results);
-     }
+     },
+    //跳转到兴趣页
+    tointerest(){
+      console.log(111);
+      this.$router.push("/interest");
+    }
   }
 };
 </script>
+
 <style lang='less' scoped>
 .nav-box{
   position: fixed;
