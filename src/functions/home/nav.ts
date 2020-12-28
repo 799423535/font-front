@@ -19,7 +19,8 @@ export const fn = (reactive: any, ref: any): any => {
         { title: "拍场" },
         { title: "讲座" },
         { title: "学术" },
-        { title: "设计" }
+        { title: "设计" },
+        { title: "测试" },
     ]);
     let active: string | Number = 1;
     const str = localStorage.getItem("active");

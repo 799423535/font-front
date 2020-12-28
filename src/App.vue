@@ -8,6 +8,7 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "App",
+  render(createElement: any) {},
 });
 </script>
 <style lang="less"></style>

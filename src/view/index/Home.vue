@@ -129,10 +129,9 @@ export default defineComponent({
   box-shadow: 0 0 5px 2px #eee;
   &::placeholder {
     background: url("./../../assets/img/home/btn03.png") no-repeat 0;
-    font-size: 12px;
     color: #dedede;
     padding-left: 20px;
-    line-height: 10px;
+    line-height: 18px;
   }
 }
 .home .head .bot {
@@ -168,6 +167,10 @@ export default defineComponent({
       top: 0;
       bottom: 0;
       margin: auto;
+    }
+    ul {
+      height: 105px;
+      overflow: hidden;
     }
   }
 }
