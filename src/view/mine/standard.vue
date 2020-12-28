@@ -31,7 +31,7 @@
   <van-tab title="J">内容 5</van-tab>
   <van-tab title="L">内容 6</van-tab>
   <van-tab title="P">内容 3</van-tab>
-  <van-tab title="Q">
+  <van-tab title="Q" class="authors">
       <img src="../../assets/slices/authorslices/qibaishi.png" alt="">
       <div class="author">齐白石</div>
   </van-tab>

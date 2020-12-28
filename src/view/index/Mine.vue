@@ -26,7 +26,7 @@
               <span v-if="judge">{{detailData.username}}</span>
               <span v-else style="margin-left:-80px">未登录</span>
                <br>
-              <span  v-if="judge" style="color:#909090 ;font-size:12px" >在艺号  28796505 <span class="arro"> ></span> </span>
+              <span  v-if="judge" class="num-code" >在艺号  28796505 <span class="arro"> ></span> </span>
             </div>
              
              <div class="mine-headercenter member">
@@ -71,7 +71,7 @@
     <div class="order">
       <div class="order-left">
          <p>我的订单</p>
-         <p style="color:#777">验票/付款/查物流</p>
+         <p class="order-p" style="color:#777;">验票/付款/查物流</p>
       </div>
         <div class="order-right">
           <img src="./../../assets/slices/mineslices/icon3.png" alt="">
@@ -313,7 +313,9 @@ data(){
    justify-content: space-between;
    
    .portraits-name{
-     vertical-align:baseline
+     vertical-align:baseline;
+     margin-top:-15px ;
+
    }
   
 
@@ -368,5 +370,14 @@ data(){
 .member-center{
 font-size: 12px;
 }
-
+.num-code{
+  color:#909090 ;
+  font-size:12px ;
+  position: relative;
+  bottom: 20px;
+  z-index: 200;
+}
+.order-p{
+  width: 100px;
+}
 </style>

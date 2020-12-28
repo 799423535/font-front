@@ -32,8 +32,8 @@
           <!-- </div> -->
           <div class="note-right" >
             <p style="font-size:12.67pt">{{list.username}}</p>
-            <p style="color:#969696;font-size:8.67pt">{{list.details[index].data}}</p>
-            <p style="font-size:14.67pt">{{list.details[index].text}}</p>
+            <p style="color:#969696;font-size:8.67pt;margin-top:5px">{{list.details[index].data}}</p>
+            <p style="font-size:14.67px;margin-top:5px">{{list.details[index].text}}</p>
              <div style="margin:10px 0"><img :src="list.img" alt=""></div>
             <div class="like">
               <ul class="likelist">

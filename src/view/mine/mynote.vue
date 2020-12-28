@@ -6,13 +6,13 @@
      fixed
      @click-left="onClickLeft"
 />
-   <div  class="total">
+   <div  class="total" >
      <div class="total-tilte">
         <span>全部</span>
      </div>
    </div>
      
-   <div class="mytotal" v-for="(item , index ) in list.details" :key="index">
+   <div class="mytotal" style="margin-top:40px"  v-for="(item , index ) in list.details" :key="index">
      <div class="mynote-top">
        <img  class="pro" src="../../assets/slices/mineslices/head_img.png" alt=""><span class="pro-title">{{list.username}}</span>
      </div>
