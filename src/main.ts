@@ -54,7 +54,7 @@ import '/@/assets/styles/login/login.less';
 import '/@/assets/styles/login/register.less';
 import '/@/assets/styles/note/note.less';
 import '/@/assets/styles/note/mynote.less';
-import './assets/styles/css/iconfront/iconfont.css';
+import './assets/styles/iconfront/iconfont.less';
 import '/@/assets/styles/standard/standard.less';
 
 const app = createApp(App);
