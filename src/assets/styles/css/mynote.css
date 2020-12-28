@@ -4,6 +4,7 @@
   height: 35px;
 }
 .mynote .total-tilte {
+  margin-top: 50px;
   margin-left: 10px;
   display: inline-block;
   border-bottom: 4px solid skyblue ;
