@@ -17,9 +17,11 @@ export const getUsersApi = (datas: any) => http.post("/users/login", datas);
 
 export const getaddUserApi = (datas: any) => http.post("/users/addUser", datas);
 
-export const getfindTicket = (datas:any) => http.get("/tickets/getTickets", datas);
+export const getfindTicket = (datas: any) => http.get("/tickets/getTickets", datas);
 
 //查找所有的商品
-export const getAllShop = (params:any) => http.get("/shops/getShops", params);
+export const getAllShop = (params: any) => http.get("/shops/getShops", params);
 //查找下拉
-export const getListShop = (params:any) => http.get("/shops/getListShops", params);
+export const getListShop = (params: any) => http.get("/shops/getListShops", params);
+//获取所有的任务
+export const getTasks = (params: any) => http.get("/tasks/getTasks", params);

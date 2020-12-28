@@ -14,11 +14,12 @@ export default {
 
   mounted() {},
 
-  methods: {}
+  methods: {},
 };
 </script>
-<style lang='less' scoped>
-.att{
+<style lang="less" scoped>
+.att {
   text-align: center;
+  height: 3000px;
 }
 </style>

@@ -81,14 +81,25 @@
 <script>
 import { defineComponent, ref } from "vue";
 import { fn } from "/@/functions/shop/shop";
-import BetterScroll from "better-scroll";
+
 export default defineComponent({
   setup() {
     const { getShop, results, getList, list, loading, finished } = fn();
-    getShop();
+    getShop(".sc1 .main", ".sc2 .main");
     return { getShop, results, getList, list, loading, finished };
   },
-
+  // this.$nextTick(() => {
+  //       new BetterScroll(".sc1 .main", {
+  //         click: true,
+  //         scrollX: true,
+  //         scrollY: false,
+  //       });
+  //       new BetterScroll(".sc2 .main", {
+  //         click: true,
+  //         scrollX: true,
+  //         scrollY: false,
+  //       });
+  //     });
   distoryed() {
     store.commit("shop/clear");
   },
@@ -97,20 +108,7 @@ export default defineComponent({
 
   computed: {},
 
-  mounted() {
-    this.$nextTick(() => {
-      new BetterScroll(".sc1 .main", {
-        click: true,
-        scrollX: true,
-        scrollY: false,
-      });
-      new BetterScroll(".sc2 .main", {
-        click: true,
-        scrollX: true,
-        scrollY: false,
-      });
-    });
-  },
+  mounted() {},
 
   methods: {},
 });
