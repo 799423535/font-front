@@ -1,13 +1,12 @@
 <template>
   <div class="standard">
    <div class="standard-head">
-
-     <div class="top">
+     <div class="top" >
            <div class="top-right">
              <img src="../../assets/slices/mineslices/sanjiao1.png" alt="" @click="gto">
            </div>
-           <div class="top-search">
-               <input type="text" :placeholder="icon" class="iconfont">
+           <div class="top-search" @click="gotosearch">
+               <input type="text" :placeholder="icon" class="iconfont" disabled="disabled">
            </div>
            <div class="manage">管理</div>
           
@@ -16,9 +15,27 @@
    <span class="standard-title">*A-Z字母索引，滑动查看更多</span>
       
  <van-tabs class="tabs-index">
-  <van-tab v-for="index in 8" :title="'推荐 ' + index">
-    内容 {{ index }}
+  <van-tab title="推荐"  >
+    <div class="authors">
+       <img src="../../assets/slices/authorslices/qibaishi.png" alt="">
+       <div class="author">齐白石</div>
+    </div>
+    
   </van-tab>
+  <van-tab title="B" >内容 2</van-tab>
+  <van-tab title="C">内容 3</van-tab>
+  <van-tab title="F">内容 6</van-tab>
+  <van-tab title="G">内容 2</van-tab>
+  <van-tab title="H">内容 3</van-tab>
+
+  <van-tab title="J">内容 5</van-tab>
+  <van-tab title="L">内容 6</van-tab>
+  <van-tab title="P">内容 3</van-tab>
+  <van-tab title="Q">
+      <img src="../../assets/slices/authorslices/qibaishi.png" alt="">
+      <div class="author">齐白石</div>
+  </van-tab>
+  <van-tab title="R">内容 6</van-tab>
 </van-tabs>
 
  
@@ -26,6 +43,7 @@
     
     </div>
 
+    </div>
 </template>
 
 <script>
@@ -46,8 +64,12 @@ export default {
   methods:{
     gto(){
       this.$router.go(-1);
+    },
+    gotosearch(){
+      this.$router.push('/search');
     }
-  }
+  },
+ 
 }
 </script>
 
@@ -55,7 +77,7 @@ export default {
  .standard-head{
         width: 100%;
         height: 100%;
-    
+   
     .top{
         width: 100%;
         height: 50px;
@@ -103,6 +125,27 @@ export default {
  }
  .tabs-index{
    width: 80%;
+   margin: auto;
+   .authors{
+      margin: 10px 0px  10px -20px;
+   }
+
+   img{
+   width: 80px;
+  
+  }
+  .author{
+    width: 80px;
+    height: 20px;
+    background: rgba(0, 0,0, 0.2);
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+   
+  }
  }
+
 
 </style>

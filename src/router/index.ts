@@ -123,6 +123,10 @@ const routes: any = [
     component: () =>import('./../view/mine/standard.vue')
   },
   {
+    path:"/mine/threego",
+    component: () =>import('./../view/mine/threego.vue')
+  },
+  {
     path: '/:catchAll(.*)*',
     component: () => import('./../view/404.vue'),
   },

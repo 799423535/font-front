@@ -139,7 +139,7 @@
     </van-grid-item>
      <van-grid-item>
     <van-image :src="a3" />
-   <span class="spansize" @click="standard">标准件</span>
+   <span class="spansize" @click="threego">标准件</span>
     </van-grid-item>
   <van-grid-item>
     <van-image :src="a4" />
@@ -294,8 +294,9 @@ data(){
     gotomynote(){
       this.$router.push("/mine/mynote/"+this.id);
     },
-    standard(){
-      this.$router.push("/mine/standard")
+   threego(){
+      this.$router.push("/mine/threego");
+      // console.log(222)
     }
   }
 };
