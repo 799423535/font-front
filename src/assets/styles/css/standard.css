@@ -1,0 +1,9 @@
+.standard .van-index-bar__sidebar {
+  flex-direction: row;
+  top: 15%;
+  left: 80%;
+  justify-content: space-around;
+}
+.standard .van-index-bar__sidebar span {
+  padding: 2px;
+}

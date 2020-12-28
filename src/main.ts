@@ -35,7 +35,10 @@ import {
     List,
     Overlay,
     Pagination,
+    IndexBar,
+    IndexAnchor,
     Loading 
+
 } from 'vant';
 
 
@@ -48,9 +51,9 @@ import '/@/assets/styles/mine/mine.less';
 import '/@/assets/styles/login/login.less';
 import '/@/assets/styles/login/register.less';
 import '/@/assets/styles/note/note.less';
-import '/@/assets/styles/set/set.less';
 import '/@/assets/styles/note/mynote.less';
-
+import './assets/styles/css/iconfront/iconfont.css';
+import '/@/assets/styles/standard/standard.less';
 
 const app = createApp(App);
 app.use(router);
@@ -98,6 +101,8 @@ app.use(Search);
 app.use(Calendar);
 app.use(ShareSheet);
 app.use(Pagination);
+app.use(IndexBar);
+app.use(IndexAnchor);
 app.mount('#app');
 
 // 下拉刷新

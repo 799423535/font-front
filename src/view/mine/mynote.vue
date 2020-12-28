@@ -45,25 +45,24 @@ export default {
       list:{},
     };
   },
-
-  components: {},
-
-  computed: {},
-
-  mounted() {
+   mounted() {
+    const token=localStorage.getItem('token');
     this.getdetails();
+      if(token){
+      this.getdetails();
+    }
   },
-
   methods: {
     onClickLeft(){
       this.$router.push("/index/mine/"+this.id);
     },
     async getdetails(){
-      const res = await getdetailsApi({_id:this.id});
+      const res = await getdetailsApi( {_id:localStorage.getItem('token')});
       this.list = res.results;
       console.log(res.results);
     }
   }
+   
 };
 </script>
 <style lang='less' scoped></style>

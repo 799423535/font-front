@@ -63,7 +63,6 @@ export default {
       number: '',
       password: '',
     });
-  
     return { state,active };
   },
   data(){
@@ -74,31 +73,28 @@ export default {
       }
     }
   },
+  mounted(){
+   
+  },
     methods: {
     gotoregister(){
-        this.$router.push("/login/register");
+      this.$router.push("/login/register");
     },
     goback(){
       this.$router.push("/index/home");
     },
     async sendLogin(){
-      const res = await  getUsersApi({username:this.form.username,password:this.form.password});
+      const res = await  getUsersApi({
+        username:this.form.username,
+        password:this.form.password
+        });
       if(res.status==0){
          localStorage.setItem('token',res.token);
-         
-         this.$router.go(-1);
-      }else{
-         Toast(res.msg);
+         this.$router.replace("/index/mine/"+res.token);
       }
-      // console.log(res);
+    
     },   
-    // async login(){
-    //   const res = await getUsersApi({
-
-    //   });
-      // localStorage.setItem("token",res.result.token);
-      // this.$router.replace("/index/mine")
-    // }
+  
   }
 };
 </script>

@@ -1,6 +1,5 @@
-.mine body {
-  background-color: #f5f5f5 !important;
-  color: #333;
+.mine {
+  background-color: #F5F5F5;
 }
 .mine .mine-title {
   position: fixed;
@@ -11,9 +10,6 @@
 .mine .van-nav-bar__text {
   color: #333;
 }
-.mine .mine {
-  font-size: 12px;
-}
 .mine .gap {
   margin-bottom: 8px;
 }
@@ -22,6 +18,7 @@
   margin-bottom: 8px;
 }
 .mine .money {
+  font-size: 12px;
   height: 60px;
   background: #fff;
   display: flex;
@@ -65,7 +62,7 @@
 }
 .mine .money .money-line {
   height: 50px;
-  border-left: 1px #333 solid;
+  border-left: 1px #dedede solid;
   position: relative;
   top: 6px;
   left: -70px;

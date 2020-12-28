@@ -22,12 +22,19 @@
    </van-cell-group>
     
     <van-cell-group title=" ">
-      <van-cell title="退出登录" style="color:red;text-align:center" @click="exitclick"/>
+      <van-cell title="退出登录" v-if=" judge" style="color:red;text-align:center" 
+      @click="show = true" />
+       <van-cell title="退出登录" v-else style="color:gray;text-align:center;" />
+      <!-- @click="exitclick" -->
+      <van-overlay :show="show" @click="show = false" >
+        <van-cell title="退出登录" class="exit"  @click="exitclick" />
+        </van-overlay>
       </van-cell-group>
   </div>
 </template>
 
 <script>
+
 import {getdetailsApi} from "../../utils/api";
 import { ref } from 'vue';
 
@@ -49,9 +56,22 @@ export default {
 
   components: {},
 
-  computed: {},
+  computed: {
+      judge (){
+       if(localStorage.getItem('token')){
+        return true;
+       }else{
+        return false;
+       }
+     },
+  },
 
-  mounted() {},
+  mounted() {
+      const token=localStorage.getItem('token');
+      if(token){
+      this.getdetails();  
+    }
+  },
 
   methods: {
       gotoMine(){
@@ -59,10 +79,36 @@ export default {
       },
       //退出直接跳转到首页，登录退出
       exitclick(){
-      window.sessionStorage.clear();
+      window.localStorage.clear();
        this.$router.push("/index/Home")
-      }
+      },
+      async  getdetails(){
+      const res = await getdetailsApi( {_id:localStorage.getItem('token')});
+        this.detailData = res.results;
+        console.log(this.detailData);
+    },
   }
 };
 </script>
-<style lang='scss' scoped></style>
+<style lang='less' scoped>
+.set-o{
+  background: #F6F6F6;
+}
+
+.set-line{
+  border-bottom: 1px  solid   #D7D7D7;;
+}
+
+.van-cell-group__title{
+  padding: 6px;
+}
+.exit{
+   color:red;
+   text-align:center;
+   position: relative;
+   top: 500px;
+   width: 90%;
+   margin: auto;
+   border-radius:10px ;
+}
+</style>
