@@ -3,7 +3,7 @@
   <!-- 头部导航 -->
     <div class="nav-box">
       <div class="nav-bar">
-        <span >兴趣分类</span>
+        <span @click=" tointerest">兴趣分类</span>
         
         <div class="box-title">
            <div class="tocities">
@@ -76,6 +76,11 @@ export default {
       console.log(111);
       this.$router.push("/index/exhibition");
     },
+        //跳转到兴趣页
+    tointerest(){
+      console.log(111);
+      this.$router.push("/interest");
+    }
   }
 };
 </script>

@@ -2,7 +2,7 @@
  <!-- 头部导航 -->
   <div class="header">
    
-    <van-nav-bar title="国内　国外"  left-arrow>
+    <van-nav-bar title="国内　国外"  left-arrow @click-left="back">
       <template #right>
         <van-icon name="search" size="18" />
       </template>
@@ -71,6 +71,9 @@ export default {
     this.$store.commit("exhibition/changecity",elm)
       console.log(elm);
       this.$router.go(-1);//后退一步的页面
+    },
+    back(){
+       this.$router.go(-1);//后退一步的页面
     }
   }
 };

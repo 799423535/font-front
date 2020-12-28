@@ -103,15 +103,17 @@ export default {
 .img-box{
   background: #fff;
   width: 100%;
-  overflow: auto;//auto，可以实现横向滚动
+  overflow: hidden;//auto，可以实现横向滚动
 
   .box-four{
     width: 100%;
-    margin:0 10px;
+    height: 222px;
+    
     // text-align: center;
     .box-four-img{
       width: 100%;
       height: 222px;
+      padding:0 10px;
     }
   }
 

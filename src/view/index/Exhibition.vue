@@ -172,11 +172,14 @@ export default {
   computed: {
     city(){
       return this.$store.state.exhibition.city;
+
     }
   },
 
-  mounted() {   
-    this.getList();
+   mounted() {   
+     this.getList();
+    console.log(this.$store.state.exhibition.city);
+    console.log(this.$store.state.exhibition.city.name);
   },
 
   methods: {
