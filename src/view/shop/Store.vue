@@ -88,18 +88,7 @@ export default defineComponent({
     getShop(".sc1 .main", ".sc2 .main");
     return { getShop, results, getList, list, loading, finished };
   },
-  // this.$nextTick(() => {
-  //       new BetterScroll(".sc1 .main", {
-  //         click: true,
-  //         scrollX: true,
-  //         scrollY: false,
-  //       });
-  //       new BetterScroll(".sc2 .main", {
-  //         click: true,
-  //         scrollX: true,
-  //         scrollY: false,
-  //       });
-  //     });
+
   distoryed() {
     store.commit("shop/clear");
   },
