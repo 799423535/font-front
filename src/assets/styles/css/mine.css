@@ -10,6 +10,9 @@
 .mine .van-nav-bar__text {
   color: #333;
 }
+.mine .codenum {
+  font-size: 12px !important;
+}
 .mine .gap {
   margin-bottom: 8px;
 }
@@ -85,6 +88,7 @@
   display: inline-block;
   position: relative;
   top: -6px;
+  left: -3px;
 }
 .mine .van-image {
   margin-bottom: 8px;
@@ -105,4 +109,8 @@
 }
 .mine .van-grid-item {
   border-top: 1px solid #dedede;
+}
+.mine .vancell {
+  width: 98%;
+  margin-left: 2%;
 }
