@@ -183,7 +183,7 @@ export default defineComponent({
   justify-content: space-around;
   flex-wrap: wrap;
   li {
-    font-size: 16px;
+    font-size: 12px;
     width: 80px;
     height: 30px;
     line-height: 30px;
