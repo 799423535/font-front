@@ -17,27 +17,30 @@
     </div>
 
     <!-- 表头 -->
-    <div class="mine-head gap" style="margin-bottom:12px;margin-top:50px">
-        <div class="portraits">
-          <div class="portraits-top">
-            <div class="portraits-ico" @click="gotoNote">
-              <img v-if="judge" src="./../../assets/slices/mineslices/head_img.png" alt="" class="headimg" >
-              <img v-else src="./../../assets/slices/loginslices/touxiang.png" alt="" class="headimg" >
-            </div>
-             <div class="portraits-name">
-              
-              <span v-if="judge">{{detailData.username}}</span>
-              <span v-else style="margin-left:-80px">未登录</span>
-               <br>
-              <span  v-if="judge" class="num-code" >
-                在艺号  28796505  <span class="arro"> ></span>
-              </span>
-            </div>
-             
-             <div class="mine-headercenter member">
-               <img class="" src="./../../assets/slices/mineslices/icon2.png" alt="">
-               <span class="member-center">会员中心</span>
-             </div>
+    <div class="mine-head gap" style="margin-bottom: 12px; margin-top: 50px">
+      <div class="portraits">
+        <div class="portraits-top">
+          <div class="portraits-ico" @click="gotoNote">
+            <img
+              v-if="judge"
+              src="./../../assets/slices/mineslices/head_img.png"
+              alt=""
+              class="headimg"
+            />
+            <img
+              v-else
+              src="./../../assets/slices/loginslices/touxiang.png"
+              alt=""
+              class="headimg"
+            />
+          </div>
+          <div class="portraits-name">
+            <span v-if="judge">{{ detailData.username }}</span>
+            <span v-else style="margin-left: -80px">未登录</span>
+            <br />
+            <span v-if="judge" class="num-code">
+              <span class="codenum">在艺号 28796505 </span> <span class="arro"> ></span>
+            </span>
           </div>
 
           <div class="mine-headercenter member">
