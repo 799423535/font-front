@@ -42,7 +42,6 @@
       >
         <div class="ims">
           <img src="/@/assets/img/home/xiangxiajiantou.png" @click="showPopup" alt="" />
-
           <van-popup v-model:show="show" position="top" :style="{ height: '25%' }">
             <p class="title">全部分类</p>
             <ul class="boxul">
