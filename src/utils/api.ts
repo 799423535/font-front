@@ -25,3 +25,7 @@ export const getAllShop = (params: any) => http.get("/shops/getShops", params);
 export const getListShop = (params: any) => http.get("/shops/getListShops", params);
 //获取所有的任务
 export const getTasks = (params: any) => http.get("/tasks/getTasks", params);
+//修改任务
+export const todoTasks = (params: any) => http.post("/tasks/todoTasks", params);
+//修改积分
+export const updateScore = (params: any) => http.post("/users/updateScore", params);

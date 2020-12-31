@@ -31,7 +31,7 @@ const routes: any = [
           {
             path: '/index/mine/:id',
             component: () => import('./../view/index/Mine.vue'),
-            props: true
+            props: true,
           }
 
         ]

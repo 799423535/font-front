@@ -1,4 +1,3 @@
-import {ref} from "vue";
 export const state: any = {
     results: [],
     list: [],

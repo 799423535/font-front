@@ -3,11 +3,7 @@
     <div class="dt">
       <div class="navbar">
         <div class="left">
-          <img
-            src="./../../assets/img/home/sanjiao.png"
-            alt=""
-            @click="goback"
-          />
+          <img src="./../../assets/img/home/sanjiao.png" alt="" @click="goback" />
         </div>
         <div class="right">
           <img src="./../../assets/img/home/sous.png" alt="" />
@@ -27,9 +23,7 @@
       <div class="footer">
         <div>添加行程</div>
         <div class="foot-end">
-          <img src="/@/assets/img/home/xihuan.png" alt="" />{{
-            tick.details.likes
-          }}喜欢
+          <img src="/@/assets/img/home/xihuan.png" alt="" />{{ tick.details.likes }}喜欢
         </div>
       </div>
     </div>
@@ -58,9 +52,7 @@
         </div>
       </div>
       <div class="works">
-        <p class="zuopin">
-          作品(10) <img src="/@/assets/img/home/liebiao.png" alt="" />
-        </p>
+        <p class="zuopin">作品(10) <img src="/@/assets/img/home/liebiao.png" alt="" /></p>
         <div class="zp">
           <detas :imgsArr="imgsArr" srcKey="src">
             <template v-slot="{ item }">
@@ -165,17 +157,47 @@ export default defineComponent({
         totle.value = count.value * price2.value;
       }
     };
-    const imgsArr=[
-      {src:"https://img.zai-art.com/89849C37233D7E6E2A0D3ABF3D55B4E3/650C69B837AF94B445AD6E535C9BC260.jpeg?imageView2/2/w/858/h/572/format/jpg"},
-      {src:"https://img.zai-art.com/7E9B037125BB5A0568C118C91D500B51/45180734764128C2A0B76648484A74C1.jpeg?imageView2/2/w/858/h/1144/format/jpg"},
-      {src:"https://img.zai-art.com/B8578D408A598790209964B76A5ECC6D/353EBCCB85B53B6F3D1AB6F5C7196628.jpeg?imageView2/2/w/858/h/1144/format/jpg"},
-      {src:"https://img.zai-art.com/9856B1C78A8B39A9729F0305B467A9CC/0665BB98A582F178F74281BDF7C79E95.jpeg?imageView2/2/w/858/h/1717/format/"},
-      {src:"https://img.zai-art.com/D6C905AD388662E5BB9CCC4ACD33FCBB/F256CFC5E8B21B0C21CF87C5B7E3F12E.jpeg?imageView2/2/w/858/h/570/format/jpg"},
-      {src:"https://img.zai-art.com/7CD32A721298DFDBF420C259B5270C4A/5C1751DAF3A900D3C77A885D96EB2A77.jpeg?imageView2/2/w/858/h/572/format/jpg"},
-      {src:"https://img.zai-art.com/D975FE506BD9E978C0B3BF0E3BA775E9/7EDE867660B1CB0ABDD2B9DD0E417404.jpeg?imageView2/2/w/858/h/1717/format/jpg"},
-      {src:"https://img.zai-art.com/A3DEFB62D6909DC76606EBF3131D736B/DFD03350952C35475F9418350DA5E460.jpeg?imageView2/2/w/858/h/1717/format/jpg"},
-      {src:"https://img.zai-art.com/041D3CEB6132C353DE986CF93035411B/CC267E70FF22B3ABA67BD01C4928D481.png?imageView2/2/w/858/h/583/format/jpg"},
-      {src:"https://img.zai-art.com/4C2B69273B2E4AECEA7A11059D6038A1/2ECCD9E6EB6D8A268B95B7BB37B1ED1E.jpeg?imageView2/2/w/858/h/1144/format/jpg"},
+    const imgsArr = [
+      {
+        src:
+          "https://img.zai-art.com/89849C37233D7E6E2A0D3ABF3D55B4E3/650C69B837AF94B445AD6E535C9BC260.jpeg?imageView2/2/w/858/h/572/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/7E9B037125BB5A0568C118C91D500B51/45180734764128C2A0B76648484A74C1.jpeg?imageView2/2/w/858/h/1144/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/B8578D408A598790209964B76A5ECC6D/353EBCCB85B53B6F3D1AB6F5C7196628.jpeg?imageView2/2/w/858/h/1144/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/9856B1C78A8B39A9729F0305B467A9CC/0665BB98A582F178F74281BDF7C79E95.jpeg?imageView2/2/w/858/h/1717/format/",
+      },
+      {
+        src:
+          "https://img.zai-art.com/D6C905AD388662E5BB9CCC4ACD33FCBB/F256CFC5E8B21B0C21CF87C5B7E3F12E.jpeg?imageView2/2/w/858/h/570/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/7CD32A721298DFDBF420C259B5270C4A/5C1751DAF3A900D3C77A885D96EB2A77.jpeg?imageView2/2/w/858/h/572/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/D975FE506BD9E978C0B3BF0E3BA775E9/7EDE867660B1CB0ABDD2B9DD0E417404.jpeg?imageView2/2/w/858/h/1717/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/A3DEFB62D6909DC76606EBF3131D736B/DFD03350952C35475F9418350DA5E460.jpeg?imageView2/2/w/858/h/1717/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/041D3CEB6132C353DE986CF93035411B/CC267E70FF22B3ABA67BD01C4928D481.png?imageView2/2/w/858/h/583/format/jpg",
+      },
+      {
+        src:
+          "https://img.zai-art.com/4C2B69273B2E4AECEA7A11059D6038A1/2ECCD9E6EB6D8A268B95B7BB37B1ED1E.jpeg?imageView2/2/w/858/h/1144/format/jpg",
+      },
     ];
     return {
       goback,
@@ -190,11 +212,13 @@ export default defineComponent({
       price1,
       price2,
       cot,
-      imgsArr
+      imgsArr,
     };
   },
-
-  components: {Detas},
+  beforeRouteUpdate(to, from, next) {
+    next();
+  },
+  components: { Detas },
 
   computed: {
     tick() {
@@ -203,7 +227,6 @@ export default defineComponent({
     background: function () {
       return {
         backgroundImage: "url(" + this.$store.state.details.tick.img + ")",
-        // background: "rgba(0,0,0,0.3)",
         filter: "blur(10px)",
       };
     },
@@ -214,7 +237,7 @@ export default defineComponent({
   methods: {},
 });
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .details {
   position: relative;
   .dt {
@@ -376,7 +399,7 @@ export default defineComponent({
       }
       .zp {
         background: #fff;
-        img{
+        img {
           width: 100%;
         }
       }
@@ -387,7 +410,7 @@ export default defineComponent({
     bottom: 0;
     display: flex;
     width: 100%;
-    .left{
+    .left {
       background: #eee;
     }
     div {

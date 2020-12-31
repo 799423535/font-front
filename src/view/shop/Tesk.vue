@@ -2,12 +2,12 @@
   <div class="tesk">
     <div class="banner">
       <p>我的积分<span class="">积分明细</span></p>
-      <div>167</div>
+      <div>{{ score }}</div>
     </div>
     <div class="sign">
       <ul>
         <li v-for="i in 7" :key="i">
-          <img src="/@/assets/img/product/btn_signin_bg(1).png" alt="" />
+          <div class="ig">{{ "0" + i }}</div>
           <p>{{ i }}天</p>
         </li>
       </ul>
@@ -17,19 +17,22 @@
       <div class="title">
         新手上道
         <p class="comp">
-          <span v-if="state.list.results"
-            >{{ state.list.cnt }}/{{ state.list.results.length }}已完成</span
-          >
+          <span v-if="list.results">{{ list.cnt }}/{{ list.results.length }}已完成</span>
           <img src="/@/assets/img/product/btn_open(1).png" alt="" />
         </p>
       </div>
-      <div class="mission" v-for="(item, i) in state.list.results" :key="i">
+      <div class="mission" v-for="(item, i) in list.results" :key="i">
         <div class="left">
           <p class="txt">{{ item.txt }}</p>
           <p class="count">{{ item.count }}分</p>
         </div>
-        <div class="right">
-          <img v-if="!item.src" src="/@/assets/img/product/btn_go(1).png" alt="" />
+        <div class="right" @click="todoTask">
+          <img
+            v-if="!item.src"
+            @click="todoTask(item)"
+            src="/@/assets/img/product/btn_go(1).png"
+            alt=""
+          />
           <img v-else src="/@/assets/img/product/btn_complete.png" alt="" />
         </div>
       </div>
@@ -39,25 +42,20 @@
 
 <script>
 import { defineComponent, computed, reactive } from "vue";
-import { getTasks } from "./../../utils/api";
+import { useStore } from "./../../store";
 export default defineComponent({
   setup() {
-    const state = reactive({
-      list: [],
-    });
-    getTasks().then((res) => {
-      state.list = res;
-    });
-    return { state };
+    const store = useStore();
+    store.dispatch("task/getTasksAction");
+
+    let list = computed(() => store.state.task.list);
+    let score = computed(() => store.state.task.score);
+    const todoTask = (item) => {
+      store.dispatch("task/todoTask", item);
+    };
+    return { list, todoTask, score };
   },
-
   components: {},
-
-  computed: {},
-
-  mounted() {},
-
-  methods: {},
 });
 </script>
 <style lang="less" scoped>
@@ -100,6 +98,15 @@ export default defineComponent({
       padding-top: 20px;
       justify-content: space-evenly;
       li {
+        div {
+          background: url("./../../assets/img/product/btn_signin_bg(1).png");
+          width: 35px;
+          height: 35px;
+          font-size: 12px;
+          text-align: center;
+          line-height: 35px;
+          color: #fff;
+        }
         p {
           font-size: 12px;
           color: #ffc878;

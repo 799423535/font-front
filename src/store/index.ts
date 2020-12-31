@@ -11,13 +11,15 @@ import { tick } from "./tick";
 import { details } from "./details";
 import { exhibition } from "./exhibition";
 import { shop } from "./shop";
+import { task } from "./task";
 export const store: any = createStore({
   modules: {
     home,
     tick,
     details,
     exhibition,
-    shop
+    shop,
+    task
   }
 })
 
