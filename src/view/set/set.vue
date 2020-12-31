@@ -91,10 +91,6 @@ export default {
 };
 </script>
 <style lang='less' scoped>
-.set-o{
-  background: #F6F6F6;
-}
-
 .set-line{
   border-bottom: 1px  solid   #D7D7D7;;
 }

@@ -26,7 +26,8 @@
               <span v-if="judge">{{detailData.username}}</span>
               <span v-else style="margin-left:-80px">未登录</span>
                <br>
-              <span  v-if="judge" class="num-code" >在艺号  28796505 <span class="arro"> ></span> </span>
+              <span  v-if="judge" class="num-code" >
+                <span class="codenum">在艺号  28796505 </span> <span class="arro"> ></span> </span>
             </div>
              
              <div class="mine-headercenter member">
@@ -164,17 +165,20 @@
 
    <div class="help gap">
      <div class="minetitle">帮助和反馈</div>
-    
-   <van-cell-group>
-    <van-cell title="意见反馈" is-link  />
+  <div style="background:#fff">
+    <van-cell-group class="vancell">
+    <van-cell title="意见反馈" is-link />
     <van-cell title="分享在艺" is-link  @click="showShare = true"  />
     <van-share-sheet
     v-model:show = "showShare" :options="options"
     @select="onSelect"
   />
+  
+   
     <van-cell title="申请认证" is-link />
 
    </van-cell-group>
+   </div>
    </div>
   
   </div>
@@ -372,10 +376,11 @@ font-size: 12px;
   color:#909090 ;
   font-size:12px ;
   position: relative;
-  bottom: 20px;
+  bottom: 18px;
   z-index: 200;
 }
 .order-p{
   width: 100px;
 }
+
 </style>

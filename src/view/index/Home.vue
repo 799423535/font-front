@@ -150,7 +150,6 @@ export default defineComponent({
   margin-top: 10px;
   background: #fff;
   position: relative;
-
   .ims {
     position: absolute;
     right: 0;

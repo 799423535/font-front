@@ -56,6 +56,7 @@ import '/@/assets/styles/note/note.less';
 import '/@/assets/styles/note/mynote.less';
 import './assets/styles/iconfront/iconfont.less';
 import '/@/assets/styles/standard/standard.less';
+import '/@/assets/styles/set/set.less';
 
 const app = createApp(App);
 app.use(router);
