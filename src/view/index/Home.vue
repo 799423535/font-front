@@ -41,9 +41,8 @@
         v-model:active="active"
       >
         <div class="ims">
-          <van-cell is-link @click="showPopup">
-            <img src="/@/assets/img/home/xiangxiajiantou.png" alt="" />
-          </van-cell>
+          <img src="/@/assets/img/home/xiangxiajiantou.png" @click="showPopup" alt="" />
+
           <van-popup v-model:show="show" position="top" :style="{ height: '25%' }">
             <p class="title">全部分类</p>
             <ul class="boxul">
@@ -151,11 +150,11 @@ export default defineComponent({
   margin-top: 10px;
   background: #fff;
   position: relative;
+
   .ims {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 999;
     width: 50px;
     height: 40px;
     background: #fff;

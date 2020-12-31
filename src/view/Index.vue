@@ -63,6 +63,8 @@ export default defineComponent({
 <style lang="less" scoped>
 .wrapper {
   display: flex;
+  position: absolute;
+  z-index: 999;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.97);
