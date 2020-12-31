@@ -377,7 +377,6 @@ font-size: 12px;
   color:#909090 ;
   font-size:12px ;
   position: relative;
-  bottom: 18px;
   z-index: 200;
 }
 .order-p{
