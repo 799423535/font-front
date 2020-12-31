@@ -9,7 +9,7 @@
            <div class="tocities">
           <span @click="exhibitionCity" class="title">{{city.name}} </span>
           
-           <van-image :src="xialakuang" />
+           <img src="../../assets/exhibitionimg/down.png" alt="">
          </div>
           <span @click="toglobal">全球</span>
          </div>
@@ -121,6 +121,12 @@ export default {
       display: flex;
     align-self: center;
     margin-right: 10px;
+     img{
+      width: 20px;
+     height: 20px;
+    margin-top: 16px;
+    padding: 3px;
+    }
   }
   .title{
      color:#222222;
