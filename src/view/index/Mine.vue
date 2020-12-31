@@ -27,7 +27,8 @@
               <span v-else style="margin-left:-80px">未登录</span>
                <br>
               <span  v-if="judge" class="num-code" >
-                <span class="codenum">在艺号  28796505 </span> <span class="arro"> ></span> </span>
+                在艺号  28796505  <span class="arro"> ></span>
+              </span>
             </div>
              
              <div class="mine-headercenter member">
